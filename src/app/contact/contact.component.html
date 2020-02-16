@@ -1,0 +1,45 @@
+<div class="contact">
+  <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="75" width="100%" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
+    <path d="M0 0 L50 100 L100 0 Z" fill="white" stroke="white"></path>
+  </svg>
+  <h1>Contact</h1>
+  <h3>Have a question or want to work together?</h3>
+
+  <form action="submit" [formGroup]='contactForm' (ngSubmit)="sendEmail()" class="contact-form">
+    <input type="text" formControlName="name" [ngClass]="{'input-danger': name.touched && name.invalid}" id="name" placeholder="Name" required>
+    <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+      <div *ngIf="name.errors.required">Username is required</div>
+      <div *ngIf="name.errors.minlength">Username should be minimum 3 characters</div>
+    </div>
+    <input type="email" formControlName="email" [ngClass]="{'input-danger': email.touched && email.invalid}" id="email" placeholder="E-mail adress" required>
+    <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+      <div *ngIf="email.errors.required">Email is required</div>
+      <div *ngIf="email.errors.pattern">Email should be in name@example.com format</div>
+    </div>
+    <div class="text">
+      <textarea rows="10" #textarea formControlName="message" [ngClass]="{'input-danger': message.touched && message.invalid}" max-length="800" placeholder="Your message"
+        required></textarea>
+      <span class="letterCount" *ngIf="textarea.value.length > 0">{{ textarea.value.length }}</span>
+    </div>
+    <div class="alert alert-danger" *ngIf="message.touched && message.invalid">
+      <div *ngIf="message.errors.required">Message is required</div>
+      <div *ngIf="message.errors.minlength">Message should have minimum 50 characters</div>
+    </div>
+      <div *ngIf="emailSuccess" class="alert alert-success">Your message was sent successfully.</div>
+    <input type="submit" value="Submit" class="btn">
+  </form>
+</div>
+<footer>
+  <div class="arrow-up">
+    <i class="fas fa-angle-double-up"></i>
+  </div>
+  <div class="icons">
+    <div *ngFor="let contact of contacts" class="icon">
+      <a [href]="contact.link" target="_blank">
+        <i class="{{ contact.icon }}"></i>
+      </a>
+    </div>
+  </div>
+  <div class="author">Marko Nastić <span class="highlight">©2020</span></div>
+</footer>
