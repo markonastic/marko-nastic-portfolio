@@ -1,0 +1,48 @@
+.home {
+  height: 100vh;
+  background: #252934;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+
+    .highlight {
+      color: #e31b6d;
+      white-space: nowrap;
+    }
+  }
+
+  .btn {
+    border: 2px solid white;
+    color: white;
+    height: 4rem;
+    width: 12rem;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.3s,
+      border-color ease-in-out 0.3s;
+
+    &:hover {
+      background-color: #05c2c9;
+      border-color: #05c2c9;
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    .arrow {
+      margin-left: 10px;
+      transition: transform ease-in-out 0.3s;
+    }
+  }
+}
