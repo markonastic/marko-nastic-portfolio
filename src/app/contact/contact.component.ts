@@ -84,4 +84,8 @@ export class ContactComponent implements OnInit {
     this.email.reset();
     this.message.reset();
   }
+
+  scrollToHome() {
+    document.querySelector('#home').scrollIntoView();
+  }
 }

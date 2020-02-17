@@ -14,7 +14,6 @@ const routes: Routes = [
 ];
 
 const extraOptions: ExtraOptions = {
-  // useHash: false,
   anchorScrolling: 'enabled',
   onSameUrlNavigation: 'reload',
   scrollPositionRestoration: 'enabled'
