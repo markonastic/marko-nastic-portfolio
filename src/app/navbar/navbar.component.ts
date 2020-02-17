@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  navs = ['home', 'about', 'projects', 'contact'];
+
   constructor() { }
 
 }

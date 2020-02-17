@@ -102,3 +102,21 @@
     }
   }
 }
+
+@media screen and (max-width: 1100px) {
+  .about .content {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .about .content {
+    max-width: 80vw;
+  }
+}
+
+@keyframes fillSkillBar {
+  0% {
+    width: calc(10%)
+  }
+}
