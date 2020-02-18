@@ -1,0 +1,122 @@
+.about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #444649;
+  // padding: 50px;
+  padding: 3rem;
+
+  .content {
+    display: flex;
+    max-width: 65rem;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+
+    .content-about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.6rem;
+      width: 40rem;
+      max-width: 100%;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .img {
+        border: 0.4rem solid #05c2c9;
+        // border: 5px solid #05c2c9;
+        border-radius: 50%;
+        width: 14rem;
+        height: 14rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 0px 0.4rem rgb(37, 41, 52);
+        // box-shadow: 0px 0px 0px 5px rgb(37, 41, 52);
+        overflow: hidden;
+
+        img {
+          height: 101%;
+        }
+      }
+
+      .text {
+        // width: 25rem;
+        // width: 400px;
+        text-align: center;
+        margin-top: 0.6rem;
+        // margin-top: 10px;
+      }
+    }
+
+    .content-skills {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.6rem;
+
+      .skill {
+        display: grid;
+        grid-template-columns: 6rem 1fr;
+        background-color: #eeeeee;
+        align-items: center;
+        line-height: 1.9rem;
+        justify-content: flex-start;
+        text-align: center;
+        position: relative;
+        margin-bottom: 1rem;
+
+        &:last-child {
+          margin: 0;
+        }
+
+        .name {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #04c2c9;
+          color: #ffffff;
+          font-weight: bold;
+        }
+
+        .bar {
+          background-color: #00a1a7;
+          height: 100%;
+          transition: width 1.5s ease-in;
+          animation: fillSkillBar 3s;
+
+          .per {
+            position: absolute;
+            right: 1rem;
+            color: #666666;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .about .content {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .about .content {
+    max-width: 80vw;
+  }
+}
+
+@keyframes fillSkillBar {
+  0% {
+    width: calc(10%)
+  }
+}

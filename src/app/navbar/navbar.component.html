@@ -1,0 +1,8 @@
+<nav class="nav-container">
+  <div class="navbar">
+    <div class="nav" *ngFor="let nav of navs; let i = index"
+         (click)="scrollToElement(nav)" [ngClass]="{active: activeRoute === i}">
+         {{ nav }}
+    </div>
+  </div>
+</nav>
