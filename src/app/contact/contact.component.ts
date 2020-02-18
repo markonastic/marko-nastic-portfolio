@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { EmailService } from '../services/email-service/email.service';
+import { EmailService, FormspreeResponse } from '../services/email-service/email.service';
 
 @Component({
   selector: 'app-contact',
@@ -59,7 +59,7 @@ export class ContactComponent implements OnInit {
   sendEmail() {
     if (this.contactForm.valid) {
       this.emailService.sendEmail(this.name.value, this.email.value, this.message.value)
-                        .subscribe(response => this.checkResponse(response));
+                        .subscribe((response: FormspreeResponse) => this.checkResponse(response));
     } else if (this.name.untouched) {
         this.name.markAsTouched();
     } else if (this.email.untouched) {
@@ -69,7 +69,7 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  checkResponse(response) {
+  checkResponse(response: FormspreeResponse) {
     this.emailSuccess = response.ok;
     if (this.emailSuccess) {
       setTimeout(() => {

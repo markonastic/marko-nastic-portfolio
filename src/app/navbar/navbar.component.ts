@@ -15,7 +15,7 @@ export class NavbarComponent {
   constructor() { }
 
   scrollToElement(nav: string) {
-    document.querySelector('#' + nav + '').scrollIntoView();
+    document.querySelector('#' + nav).scrollIntoView();
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, HostListener, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,10 @@ import { Component, HostListener, AfterViewInit } from '@angular/core';
 export class AppComponent implements AfterViewInit {
 
   activeRoute = 0;
-  homeOffset = null;
-  aboutOffset = null;
-  projectsOffset = null;
-  contactOffset = null;
+  homeOffset: number = null;
+  aboutOffset: number = null;
+  projectsOffset: number = null;
+  contactOffset: number = null;
 
   ngAfterViewInit() {
     this.calcOffset();
@@ -24,22 +24,23 @@ export class AppComponent implements AfterViewInit {
     this.contactOffset = (document.querySelector('#contact') as HTMLElement).offsetTop;
   }
 
-  onResize() {
-    this.calcOffset();
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  checkOffsetTop() {
-    if (window.pageYOffset >= this.homeOffset - 100 && window.pageYOffset < this.aboutOffset - 100) {
+  checkOffset() {
+    const { pageYOffset } = window;
+    if (pageYOffset >= this.homeOffset && pageYOffset < this.aboutOffset) {
       this.activeRoute = 0;
-    } else if (window.pageYOffset >= this.aboutOffset - 100 && window.pageYOffset < this.projectsOffset - 100) {
+    } else if (pageYOffset >= this.aboutOffset && pageYOffset < this.projectsOffset) {
       this.activeRoute = 1;
-    } else if (window.pageYOffset >= this.projectsOffset - 100 && window.pageYOffset < this.contactOffset - 100) {
+    } else if (pageYOffset >= this.projectsOffset && pageYOffset < this.contactOffset) {
       this.activeRoute = 2;
-    } else if (window.pageYOffset >= this.contactOffset - 100) {
+    } else if (pageYOffset >= this.contactOffset) {
       this.activeRoute = 3;
     } else {
       this.activeRoute = -1;
     }
+  }
+
+  onResize() {
+    this.calcOffset();
+    this.checkOffset();
   }
 }

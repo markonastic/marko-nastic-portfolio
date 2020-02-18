@@ -3,7 +3,6 @@
   <div class="gallery">
     <div class="project" *ngFor="let project of projects; let projectIndex = index">
       <div class="card">
-        <!-- <div class="card" [ngStyle]="{background: 'url('+ project.images[0] +') center/cover'}"> -->
         <img src="{{project.images[0]}}" alt="">
       </div>
       <h3 class="title">{{project.name}}</h3>
