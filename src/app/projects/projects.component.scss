@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   color: #444649;
-  padding: 50px;
+  padding: 3rem;
 
   .gallery {
     display: flex;
@@ -14,15 +14,16 @@
     align-items: center;
 
     .project {
-      height: 250px;
-      width: 400px;
+      height: 16rem;
+      width: 25rem;
+      max-width: 100vw;
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
 
-      &:hover {
+      &:hover, &:active {
         .card {
           opacity: 0;
         }
@@ -61,8 +62,8 @@
         position: absolute;
         bottom: 0;
         border: 2px solid #e31b6d;
-        height: 4rem;
-        width: 12rem;
+        height: 3rem;
+        width: 10rem;
         font-size: 1.2rem;
         display: flex;
         justify-content: center;
@@ -103,22 +104,23 @@
     }
 
     .main-container {
-      width: 80vw;
-      max-width: 800px;
+      display: grid;
+      height: 100vh;
+      max-width: 50rem;
+      grid-template-rows: min-content 1fr;
       margin: 0 auto;
 
       .carousel-container {
         position: relative;
-        height: 55vh;
 
         .btn {
           position: absolute;
           bottom: 0;
           z-index: 1;
-          line-height: 50px;
-          width: 60px;
+          line-height: 3rem;
+          width: 4rem;
           text-align: center;
-          font-size: 30px;
+          font-size: 2rem;
           color: white;
           background: #00000061;
           cursor: pointer;
@@ -133,7 +135,7 @@
         }
 
         .carousel {
-          background: lightgreen;
+          background: #08878c;
           height: 100%;
           display: flex;
           width: 100%;
@@ -147,10 +149,12 @@
 
             .slide {
               flex: 1;
+              display: flex;
+              align-items: center;
 
               .img {
                 width: 100%;
-                height: 100%;
+                max-height: 100%;
               }
             }
           }
@@ -159,17 +163,16 @@
 
       .details-container {
         position: relative;
-        height: 45vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         background: white;
-        padding: 30px 50px 30px 30px;
-        border-top: 3px solid black;
+        padding: 1rem 2rem;
+        border-top: 0.2rem solid black;
         font-weight: bold;
         .header {
           .title {
-            font-size: 35px;
+            font-size: 2rem;
           }
           .made {
             opacity: 0.6;
@@ -177,20 +180,20 @@
         }
         .description {
           border-top: 1px solid #80808078;
-          padding: 20px 0;
+          padding: 1.5rem 0;
         }
         .buttons {
-          display: flex;
           position: relative;
+          display: flex;
+          justify-content: center;
           .btn {
             border: 2px solid #04c2c9;
             background: transparent;
             color: #04c2c9;
             height: 3rem;
             width: 9rem;
-            // font-size: 1rem;
             cursor: pointer;
-            margin-right: 20px;
+            margin-right: 1rem;
             transition: background-color ease-in-out 0.3s,
                         border-color ease-in-out 0.3s;
             &:hover {
@@ -205,7 +208,7 @@
               justify-content: center;
               align-items: center;
               i {
-                margin-right: 5px;
+                margin-right: 0.3rem;
               }
             }
           }
@@ -220,6 +223,21 @@
             opacity: 0.6;
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 900px) and (max-width: 500px) {
+  .projects .project-view .main-container .details-container {
+    padding: 1rem;
+    .buttons {
+      justify-content: flex-start;
+      .btn {
+        margin-right: 0.5rem;
+      }
+      .close {
+        right: -0.7rem;
       }
     }
   }

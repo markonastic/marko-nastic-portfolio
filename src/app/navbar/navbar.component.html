@@ -1,8 +1,18 @@
 <nav class="nav-container">
-  <div class="navbar">
+  <div class="navbar" [ngClass]="{showMenu: showMenu}">
     <div class="nav" *ngFor="let nav of navs; let i = index"
-         (click)="scrollToElement(nav)" [ngClass]="{active: activeRoute === i}">
+         (click)="scrollToElement(nav)"
+         [ngClass]="{active: activeRoute === i}"
+         [ngStyle]="{'transition-delay': '0.' + (2 + i) + 's'}">
          {{ nav }}
     </div>
+  </div>
+  <div class="menu-btn" (click)="openMenu($event.target)"
+                        (window:scroll)="showMenu = false"
+                        [ngClass]="{'close-btn': showMenu}"
+                        >
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
   </div>
 </nav>

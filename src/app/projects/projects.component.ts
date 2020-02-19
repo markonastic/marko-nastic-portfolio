@@ -16,8 +16,8 @@ export class ProjectsComponent {
       github: 'https://github.com/markonastic/my-weather-app',
       images: [
         'assets/projects/weather-1.png',
-        'assets/projects/memory-game.png',
-        'assets/projects/top10-1.png'
+        'assets/projects/weather-2.png',
+        'assets/projects/weather-3.png',
       ]
     },
     {
@@ -25,7 +25,8 @@ export class ProjectsComponent {
       live: 'https://markonastic.github.io/memory-game/',
       github: 'https://github.com/markonastic/memory-game',
       images: [
-        'assets/projects/memory-game.png',
+        'assets/projects/memory-game-1.png',
+        'assets/projects/memory-game-2.png',
       ]
     },
     {
@@ -33,7 +34,8 @@ export class ProjectsComponent {
       live: 'https://markonastic.github.io/top10-rock-artists/',
       github: 'https://github.com/markonastic/top10-rock-artists',
       images: [
-        'assets/projects/top10-1.png'
+        'assets/projects/top10-1.png',
+        'assets/projects/top10-2.png'
       ]
     }
   ];

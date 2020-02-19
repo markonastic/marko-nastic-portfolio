@@ -10,8 +10,14 @@ html, body {
 }
 
 
-@media screen and (min-height: 900px) and (min-width: 1300px) {
+@media screen and (min-height: 900px) and (min-width: 1000px) {
   html {
       font-size: 25px;
+  }
+}
+
+@media screen and (max-height: 900px) and (max-width: 600px) {
+  html {
+      font-size: 14px;
   }
 }

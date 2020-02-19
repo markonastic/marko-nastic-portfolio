@@ -1,6 +1,6 @@
 .contact {
   min-height: 100vh;
-  padding: 75px 0 50px 0;
+  padding: 5rem 0 3rem 0;
   background: #252934;
   color: white;
   text-align: center;
@@ -18,10 +18,12 @@
 
   h3 {
     color: #05c2c9;
+    font-size: 1rem;
   }
 
   .contact-form {
-    width: 50%;
+    width: 90%;
+    max-width: 50rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,7 +32,7 @@
     .text {
       position: relative;
       width: 100%;
-      margin-bottom: 5px;
+      margin-bottom: 0.3rem;
 
       .letterCount {
         position: absolute;
@@ -44,14 +46,14 @@
     input,
     textarea {
       width: 100%;
-      padding: 10px;
+      padding: 0.6rem;
       z-index: 1;
       border: none;
-      border-radius: 3px;
+      border-radius: 0.2rem;
       background: #1e242c;
       color: white;
       font: inherit;
-      margin-bottom: 5px;
+      margin-bottom: 0.3rem;
 
       &:last-child {
         margin: 0;
@@ -80,20 +82,20 @@
     }
 
     input {
-      height: 40px;
+      height: 2.5rem;
     }
 
     textarea {
       resize: vertical;
-      padding-right: 15px;
+      padding-right: 1rem;
       margin-bottom: 0;
     }
 
     .alert {
-      line-height: 30px;
+      line-height: 2rem;
       width: 100%;
-      margin-bottom: 5px;
-      border-radius: 3px;
+      margin-bottom: 0.3rem;
+      border-radius: 0.1rem;
 
       &.alert-danger {
         background: #b22222;
@@ -138,18 +140,18 @@ footer {
   background: #1b242f;
   text-align: center;
   color: white;
-  padding: 50px 50px 30px 50px;
+  padding: 3rem 3rem 2rem 3rem;
 
   .arrow-up {
     position: absolute;
-    top: -25px;
+    top: -1.5rem;
     background: #e31b6d;
-    height: 50px;
-    width: 50px;
+    height: 3rem;
+    width: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 2rem;
     cursor: pointer;
   }
 
@@ -157,13 +159,13 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 2rem;
 
     .icon {
-      width: 50px;
-      line-height: 50px;
+      width: 3rem;
+      line-height: 3rem;
       background: #262f38;
-      margin-right: 20px;
+      margin-right: 1.2rem;
       overflow: hidden;
 
       &:last-child {

@@ -5,8 +5,7 @@
   justify-content: center;
   align-items: center;
   color: #444649;
-  // padding: 50px;
-  padding: 3rem;
+  padding: 2rem 0;
 
   .content {
     display: flex;
@@ -29,7 +28,6 @@
 
       .img {
         border: 0.4rem solid #05c2c9;
-        // border: 5px solid #05c2c9;
         border-radius: 50%;
         width: 14rem;
         height: 14rem;
@@ -37,7 +35,6 @@
         justify-content: center;
         align-items: center;
         box-shadow: 0px 0px 0px 0.4rem rgb(37, 41, 52);
-        // box-shadow: 0px 0px 0px 5px rgb(37, 41, 52);
         overflow: hidden;
 
         img {
@@ -46,11 +43,8 @@
       }
 
       .text {
-        // width: 25rem;
-        // width: 400px;
         text-align: center;
         margin-top: 0.6rem;
-        // margin-top: 10px;
       }
     }
 
@@ -103,20 +97,20 @@
   }
 }
 
+@keyframes fillSkillBar {
+  0% {
+    width: calc(10%)
+  }
+}
+
 @media screen and (max-width: 1100px) {
   .about .content {
     flex-direction: column;
   }
 }
 
-@media screen and (min-height: 1000px) {
-  .about .content {
-    max-width: 80vw;
-  }
-}
-
-@keyframes fillSkillBar {
-  0% {
-    width: calc(10%)
+@media screen and (max-height: 900px) and (max-width: 600px) {
+  .about .content .content-skills {
+    padding: 0;
   }
 }

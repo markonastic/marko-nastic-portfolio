@@ -1,6 +1,7 @@
 .nav-container {
   position: fixed;
   top: 0;
+  height: 3rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -9,7 +10,6 @@
   z-index: 5;
 
   .navbar {
-    height: 3rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -22,6 +22,7 @@
       font-size: 1.3rem;
       cursor: pointer;
       text-transform: capitalize;
+      user-select: none;
       &:hover {
         color: #fb006785;
       }
@@ -32,5 +33,91 @@
         color: #e31b6d;
       }
     }
+  }
+
+  .menu-btn {
+    width: 2rem;
+    height: 1.4rem;
+    position: absolute;
+    right: 0.6rem;
+    display: none;
+    justify-content: space-between;
+    flex-direction: column;
+    align-self: center;
+    cursor: pointer;
+    .line {
+      height: 3px;
+      background: white;
+      pointer-events: none;
+    }
+  }
+}
+
+@media screen and (max-height: 900px) and (max-width: 500px) {
+  .nav-container {
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 3rem;
+      padding: 1rem;
+      background: #333;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform ease-in 0.3s;
+
+      &.showMenu {
+        transform: scaleY(1);
+        .nav {
+          transform: translateX(0);
+        }
+      }
+
+      .nav {
+        margin-right: 0;
+        margin-bottom: 2rem;
+        transform: translateX(100vw);
+        transition: transform ease-in 0.3s;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+    .menu-btn {
+      display: flex;
+      &.close-btn {
+        transform: rotate(45deg);
+        .line {
+          &:nth-child(1) {
+            transform: translateY(0.6rem);
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            transform-origin: bottom center;
+            transform: rotate(-90deg) translate(0.7rem, 0.1rem);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotateMenuBtn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1.125turn);
+  }
+}
+
+@keyframes rotateMenuBtnReverse {
+  from {
+    transform: rotate(1.125turn);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }
