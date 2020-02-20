@@ -7,8 +7,8 @@
          {{ nav }}
     </div>
   </div>
-  <div class="menu-btn" (click)="openMenu($event.target)"
-                        (window:scroll)="showMenu = false"
+  <div class="menu-btn" #menuBtn (click)="openMenu(menuBtn)"
+                        (window:scroll)="showMenu = false;animateMenuBtn(menuBtn)"
                         [ngClass]="{'close-btn': showMenu}"
                         >
     <div class="line"></div>

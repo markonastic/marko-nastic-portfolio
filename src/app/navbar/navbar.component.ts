@@ -20,6 +20,10 @@ export class NavbarComponent {
 
   openMenu(el: HTMLElement) {
     this.showMenu = !this.showMenu;
+    this.animateMenuBtn(el);
+  }
+
+  animateMenuBtn(el: HTMLElement) {
     el.style.animation = this.showMenu ? 'rotateMenuBtn 0.3s' : 'rotateMenuBtnReverse 0.3s';
   }
 }
