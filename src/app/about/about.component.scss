@@ -50,19 +50,14 @@
 
     .content-skills {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       padding: 0.6rem;
 
       .skill {
         display: grid;
         grid-template-columns: 6rem 1fr;
         background-color: #eeeeee;
-        align-items: center;
+        height: 1.9rem;
         line-height: 1.9rem;
-        justify-content: flex-start;
-        text-align: center;
         position: relative;
         margin-bottom: 1rem;
 
@@ -82,8 +77,6 @@
 
         .bar {
           background-color: #00a1a7;
-          height: 100%;
-          transition: width 1.5s ease-in;
           animation: fillSkillBar 3s;
 
           .per {
@@ -111,6 +104,6 @@
 
 @media screen and (max-height: 900px) and (max-width: 600px) {
   .about .content .content-skills {
-    padding: 0;
+    padding: 0.6rem 0;
   }
 }
