@@ -22,6 +22,8 @@ export class ProjectsComponent {
     },
     {
       name: 'Memory game',
+      madeWith: 'Angular',
+      description: 'Classic card matching memory game with cards turned upside down',
       live: 'https://markonastic.github.io/memory-game/',
       github: 'https://github.com/markonastic/memory-game',
       images: [
@@ -31,6 +33,8 @@ export class ProjectsComponent {
     },
     {
       name: 'Top 10 rock artists',
+      madeWith: 'Angular with infinite scroll',
+      description: 'This application shows Top 10 rock artists and their albums',
       live: 'https://markonastic.github.io/top10-rock-artists/',
       github: 'https://github.com/markonastic/top10-rock-artists',
       images: [
