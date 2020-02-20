@@ -229,15 +229,24 @@
 }
 
 @media screen and (max-height: 900px) and (max-width: 500px) {
-  .projects .project-view .main-container .details-container {
-    padding: 1rem;
-    .buttons {
-      justify-content: flex-start;
-      .btn {
-        margin-right: 0.5rem;
+  .projects {
+    padding: 0;
+    .gallery .project {
+      margin-bottom: 1rem;
+      &:last-child {
+        margin-bottom: 0;
       }
-      .close {
-        right: -0.7rem;
+    }
+    .project-view .main-container .details-container {
+      padding: 1rem;
+      .buttons {
+        justify-content: flex-start;
+        .btn {
+          margin-right: 0.5rem;
+        }
+        .close {
+          right: -0.7rem;
+        }
       }
     }
   }

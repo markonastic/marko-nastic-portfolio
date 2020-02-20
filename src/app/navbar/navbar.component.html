@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="menu-btn" #menuBtn (click)="openMenu(menuBtn)"
-                        (window:scroll)="showMenu = false;animateMenuBtn(menuBtn)"
+                        (window:scroll)="onScroll(menuBtn)"
                         [ngClass]="{'close-btn': showMenu}"
                         >
     <div class="line"></div>

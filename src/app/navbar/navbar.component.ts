@@ -23,6 +23,13 @@ export class NavbarComponent {
     this.animateMenuBtn(el);
   }
 
+  onScroll(el: HTMLElement) {
+    if (this.showMenu) {
+      this.showMenu = false;
+      this.animateMenuBtn(el);
+    }
+  }
+
   animateMenuBtn(el: HTMLElement) {
     el.style.animation = this.showMenu ? 'rotateMenuBtn 0.3s' : 'rotateMenuBtnReverse 0.3s';
   }
