@@ -52,6 +52,7 @@ export class ProjectsComponent {
 
   onProjectEvent(event: any) {
     this.currentProject = event;
+<<<<<<< HEAD
   }
 <<<<<<< HEAD
 =======
@@ -61,6 +62,8 @@ export class ProjectsComponent {
     setTimeout(() => {
       this.currentProject = null;
     }, 300);
+=======
+>>>>>>> Project view extracted to a new component
   }
 <<<<<<< HEAD
 
