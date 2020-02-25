@@ -101,8 +101,4 @@ export class ProjectsComponent {
       this.currentProject = null;
     }, 300);
   }
-
-  onScroll(el: HTMLElement) {
-    el.style.height = window.innerHeight + 'px';
-  }
 }
