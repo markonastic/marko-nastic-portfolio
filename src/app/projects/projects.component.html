@@ -12,7 +12,7 @@
       <div class="btn" (click)="viewProject(projectIndex)">Learn more</div>
     </div>
   </div>
-  <div class="project-view" #projectView [ngClass]="{showProject: showProject}" (window:scroll)="onScroll(projectView)">
+  <div class="project-view" #projectView [ngClass]="{showProject: showProject}">
     <div class="mask" (click)="closeProject()"></div>
     <div class="main-container" *ngIf="currentProject !== null">
       <div class="carousel-container">

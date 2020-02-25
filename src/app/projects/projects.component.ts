@@ -62,9 +62,12 @@ export class ProjectsComponent {
       this.currentProject = null;
     }, 300);
   }
+<<<<<<< HEAD
 
   onScroll(el: HTMLElement) {
     el.style.height = window.innerHeight + 'px';
   }
 >>>>>>> Added window size calculation on resize for project-view
+=======
+>>>>>>> View project height set to 100% for adroid chrome
 }
