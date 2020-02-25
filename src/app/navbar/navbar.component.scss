@@ -62,22 +62,20 @@
       top: 3rem;
       padding: 1rem;
       background: #333;
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform ease-in 0.3s;
+      // transform: scaleY(0);
+      // transform-origin: top;
+      // transition: transform ease-in 0.3s;
+      height: 0;
+      transition: height ease-in 0.3s;
 
       &.showMenu {
-        transform: scaleY(1);
-        .nav {
-          transform: translateX(0);
-        }
+        // transform: scaleY(1);
+        height: 200px;
       }
 
       .nav {
         margin-right: 0;
         margin-bottom: 2rem;
-        transform: translateX(100vw);
-        transition: transform ease-in 0.3s;
         &:last-child {
           margin: 0;
         }
