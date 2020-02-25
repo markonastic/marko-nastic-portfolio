@@ -53,4 +53,18 @@ export class ProjectsComponent {
   onProjectEvent(event: any) {
     this.currentProject = event;
   }
+<<<<<<< HEAD
+=======
+
+  closeProject() {
+    this.showProject = false;
+    setTimeout(() => {
+      this.currentProject = null;
+    }, 300);
+  }
+
+  onResize(el: HTMLElement) {
+    el.style.height = window.innerHeight + 'px';
+  }
+>>>>>>> Added window size calculation on resize for project-view
 }
