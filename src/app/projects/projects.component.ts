@@ -102,7 +102,7 @@ export class ProjectsComponent {
     }, 300);
   }
 
-  onResize(el: HTMLElement) {
+  onScroll(el: HTMLElement) {
     el.style.height = window.innerHeight + 'px';
   }
 }

@@ -56,29 +56,22 @@
 @media screen and (max-height: 900px) and (max-width: 500px) {
   .nav-container {
     .navbar {
-      display: flex;
-      flex-direction: column;
+      display: block;
       position: absolute;
       top: 3rem;
-      padding: 1rem;
       background: #333;
-      // transform: scaleY(0);
-      // transform-origin: top;
-      // transition: transform ease-in 0.3s;
+      overflow: hidden;
       height: 0;
       transition: height ease-in 0.3s;
 
       &.showMenu {
-        // transform: scaleY(1);
         height: 200px;
       }
 
       .nav {
         margin-right: 0;
-        margin-bottom: 2rem;
-        &:last-child {
-          margin: 0;
-        }
+        padding: 1rem 0;
+        text-align: center;
       }
     }
     .menu-btn {
