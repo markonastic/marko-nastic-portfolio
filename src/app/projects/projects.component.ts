@@ -102,4 +102,7 @@ export class ProjectsComponent {
     }, 300);
   }
 
+  onResize(el: HTMLElement) {
+    el.style.height = window.innerHeight + 'px';
+  }
 }
