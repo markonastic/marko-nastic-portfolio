@@ -3,12 +3,13 @@
     <div class="nav" *ngFor="let nav of navs; let i = index"
          (click)="scrollToElement(nav)"
          [ngClass]="{active: activeRoute === i}"
-         [ngStyle]="{'transition-delay': '0.' + (2 + i) + 's'}">
+         >
          {{ nav }}
     </div>
   </div>
   <div class="menu-btn" #menuBtn (click)="openMenu(menuBtn)"
-                        (window:scroll)="onScroll(menuBtn)"
+                        (window:scroll)="onWindowEvent(menuBtn)"
+                        (window:resize)="onWindowEvent(menuBtn)"
                         [ngClass]="{'close-btn': showMenu}"
                         >
     <div class="line"></div>

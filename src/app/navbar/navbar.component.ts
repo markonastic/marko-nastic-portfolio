@@ -12,6 +12,7 @@ export class NavbarComponent {
 
   navs = ['home', 'about', 'projects', 'contact'];
   showMenu = false;
+
   constructor() { }
 
   scrollToElement(nav: string) {
@@ -23,7 +24,7 @@ export class NavbarComponent {
     this.animateMenuBtn(el);
   }
 
-  onScroll(el: HTMLElement) {
+  onWindowEvent(el: HTMLElement) {
     if (this.showMenu) {
       this.showMenu = false;
       this.animateMenuBtn(el);

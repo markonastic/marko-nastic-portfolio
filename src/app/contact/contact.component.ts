@@ -44,7 +44,6 @@ export class ContactComponent implements OnInit {
     {link: '', icon: 'fab fa-skype'},
     {link: 'mailto:marko.nastic@hotmail.com', icon: 'fas fa-at'},
     {link: 'https://github.com/markonastic', icon: 'fab fa-github'},
-    {link: 'assets/Curriculum Vitae - Marko Nastić.pdf', icon: 'fas fa-download'},
   ];
 
   emailSuccess = false;
