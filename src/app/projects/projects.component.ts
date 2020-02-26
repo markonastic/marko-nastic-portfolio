@@ -51,14 +51,4 @@ export class ProjectsComponent {
   onProjectEvent(event: any) {
     this.currentProject = event;
   }
-<<<<<<< HEAD
-
-  closeProject() {
-    this.showProject = false;
-    setTimeout(() => {
-      this.currentProject = null;
-    }, 300);
-  }
-=======
->>>>>>> projects-component
 }
