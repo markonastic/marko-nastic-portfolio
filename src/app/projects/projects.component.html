@@ -6,6 +6,7 @@
         <img src="{{project.images[0]}}" alt="">
       </div>
       <h3 class="title">{{project.name}}</h3>
+<<<<<<< HEAD
       <div class="btn" (click)="viewProject(projectIndex)">Learn more</div>
     </div>
   </div>
@@ -51,6 +52,14 @@
           </div>
         </div>
       </div>
+=======
+      <div class="btn" (click)="currentProject = projects[projectIndex]">Learn more</div>
+>>>>>>> projects-component
     </div>
   </div>
+  <app-project-view
+      [currentProject]="currentProject"
+      (projectEvent)="onProjectEvent($event)"
+      *ngIf="currentProject !== null"
+  ></app-project-view>
 </div>

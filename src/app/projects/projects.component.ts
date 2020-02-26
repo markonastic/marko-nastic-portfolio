@@ -7,11 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ProjectsComponent {
 
+  currentProject = null;
+
   projects = [
     {
       name: 'Weather app',
       madeWith: 'Angular',
-      description: 'App that shows current weather and weather forecast for next 7 days every three hours',
+      description: 'The app that shows current weather and weather forecast for 5 next days on a 3-hour basis',
       live: 'https://markonastic.github.io/my-weather-app/',
       github: 'https://github.com/markonastic/my-weather-app',
       images: [
@@ -33,7 +35,7 @@ export class ProjectsComponent {
     },
     {
       name: 'Top 10 rock artists',
-      madeWith: 'Angular with infinite scroll',
+      madeWith: 'Angular with infinite scroll, Bootstrap',
       description: 'This application shows Top 10 rock artists and their albums',
       live: 'https://markonastic.github.io/top10-rock-artists/',
       github: 'https://github.com/markonastic/top10-rock-artists',
@@ -44,56 +46,12 @@ export class ProjectsComponent {
     }
   ];
 
-  currentSlide = 0;
-  showProject = false;
-  currentProject = null;
-  carouselWidth = 100;
-  direction = 1;
-  translateAmount = null;
-
   constructor() { }
 
-  viewProject(projectIndex: number) {
-    this.currentProject = this.projects[projectIndex];
-    this.carouselWidth = this.currentProject.images.length * 100;
-    this.translateAmount = 100 / this.currentProject.images.length;
-    this.showProject = true;
+  onProjectEvent(event: any) {
+    this.currentProject = event;
   }
-
-  slideImage(direction: number) {
-    const carousel = document.querySelector('.carousel') as HTMLElement;
-    const slider = document.querySelector('.slider') as HTMLElement;
-    if (direction === 1) {
-      if (this.direction === -1) {
-        this.direction = 1;
-        slider.prepend(slider.lastElementChild);
-        carousel.style.justifyContent = 'flex-start';
-      }
-      slider.style.transform = 'translate(-' + this.translateAmount + '%)';
-    } else {
-      if (this.direction === 1) {
-        this.direction = -1;
-        slider.appendChild(slider.firstElementChild);
-        carousel.style.justifyContent = 'flex-end';
-      }
-      slider.style.transform = 'translate(' + this.translateAmount + '%)';
-    }
-  }
-
-  transitionEnd() {
-    const slider = document.querySelector('.slider') as HTMLElement;
-    if (this.direction === 1) {
-      slider.appendChild(slider.firstElementChild);
-    } else {
-      slider.prepend(slider.lastElementChild);
-    }
-
-    slider.style.transition = 'none';
-    slider.style.transform = 'translate(0)';
-    setTimeout(() => {
-      slider.style.transition = 'all ease-in-out 0.5s';
-    });
-  }
+<<<<<<< HEAD
 
   closeProject() {
     this.showProject = false;
@@ -101,4 +59,6 @@ export class ProjectsComponent {
       this.currentProject = null;
     }, 300);
   }
+=======
+>>>>>>> projects-component
 }
