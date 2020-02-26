@@ -1,20 +1,13 @@
 .project-view {
   left: 0;
   right: 0;
-<<<<<<< HEAD
-  height: 100vh;
-=======
   height: 100%;
->>>>>>> Project view extracted to a new component
   position: fixed;
   top: 0;
   z-index: 10;
   transition: transform ease-in-out 0.3s;
-  transform: scale(1);
+  transform: scale(0);
   transform-origin: top left;
-  &.showProject {
-    transform: scale(1);
-  }
 
   .mask {
     background: #80808094;

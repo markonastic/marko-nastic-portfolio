@@ -1,4 +1,4 @@
-<div class="project-view" *ngIf="currentProject !== null" (window:resize)="onResize()">
+<div class="project-view" (transitionend)="projectViewTransitionEnd()">
   <div class="mask" (click)="closeProject()"></div>
   <div class="main-container">
     <div class="carousel-container">
@@ -6,7 +6,7 @@
         <i class="fas fa-angle-left"></i>
       </div>
       <div class="carousel">
-        <div class="slider" (transitionend)="transitionEnd()" [ngStyle]="{width: carouselWidth + '%'}">
+        <div class="slider" (transitionend)="sliderTransitionEnd()" [ngStyle]="{width: carouselWidth + '%'}">
           <div class="slide" *ngFor="let image of currentProject.images">
             <img src="{{image}}" alt="" class="img">
           </div>

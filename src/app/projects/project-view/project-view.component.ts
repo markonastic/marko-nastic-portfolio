@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-project-view',
   templateUrl: './project-view.component.html',
   styleUrls: ['./project-view.component.scss']
 })
-export class ProjectViewComponent implements OnInit {
+export class ProjectViewComponent implements OnInit, AfterViewInit {
 
   @Input() currentProject = null;
   @Output() projectEvent = new EventEmitter<any>();
@@ -14,12 +14,21 @@ export class ProjectViewComponent implements OnInit {
   carouselWidth = 100;
   direction = 1;
   translateAmount = null;
+  projectView: HTMLElement;
+  close = false;
 
   constructor() { }
 
   ngOnInit() {
     this.carouselWidth = this.currentProject.images.length * 100;
     this.translateAmount = 100 / this.currentProject.images.length;
+  }
+
+  ngAfterViewInit() {
+    this.projectView = document.querySelector('.project-view');
+    setTimeout(() => {
+      this.projectView.style.transform = 'scale(1)';
+    });
   }
 
   slideImage(direction: number) {
@@ -42,7 +51,7 @@ export class ProjectViewComponent implements OnInit {
     }
   }
 
-  transitionEnd() {
+  sliderTransitionEnd() {
     const slider = document.querySelector('.slider') as HTMLElement;
     if (this.direction === 1) {
       slider.appendChild(slider.firstElementChild);
@@ -57,10 +66,14 @@ export class ProjectViewComponent implements OnInit {
     });
   }
 
+  projectViewTransitionEnd() {
+    if (this.close) {
+      this.projectEvent.emit(null);
+    }
+  }
+
   closeProject() {
-    this.projectEvent.emit(null);
-    // setTimeout(() => {
-    //   this.currentProject = null;
-    // }, 300);
+    this.projectView.style.transform = 'scale(0)';
+    this.close = true;
   }
 }

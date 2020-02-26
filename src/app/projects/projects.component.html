@@ -6,65 +6,12 @@
         <img src="{{project.images[0]}}" alt="">
       </div>
       <h3 class="title">{{project.name}}</h3>
-<<<<<<< HEAD
-<<<<<<< HEAD
       <div class="btn" (click)="currentProject = projects[projectIndex]">Learn more</div>
-=======
-      <div class="btn" (click)="viewProject(projectIndex)">Learn more</div>
-    </div>
-  </div>
-  <div class="project-view" #projectView [ngClass]="{showProject: showProject}">
-    <div class="mask" (click)="closeProject()"></div>
-    <div class="main-container" *ngIf="currentProject !== null">
-      <div class="carousel-container">
-        <div class="btn btn-left" (click)="slideImage(-1)">
-          <i class="fas fa-angle-left"></i>
-        </div>
-        <div class="carousel">
-          <div class="slider" (transitionend)="transitionEnd()" [ngStyle]="{width: carouselWidth + '%'}">
-            <div class="slide" *ngFor="let image of currentProject.images">
-              <img src="{{image}}" alt="" class="img">
-            </div>
-          </div>
-        </div>
-        <div class="btn btn-right" (click)="slideImage(1)">
-          <i class="fas fa-angle-right"></i>
-        </div>
-      </div>
-      <div class="details-container">
-        <div class="header">
-          <span class="title">{{ currentProject.name}}</span><br>
-          <span class="made">{{ currentProject.madeWith }}</span>
-        </div>
-        <p class="description">{{ currentProject.description }}</p>
-        <div class="buttons">
-          <div class="btn">
-            <a href="{{ currentProject.live }}" target="_blank">
-              <i class="fas fa-external-link-alt"></i>
-              Live page
-            </a>
-          </div>
-          <div class="btn">
-            <a href="{{ currentProject.github }}" target="_blank">
-              <i class="fas fa-external-link-alt"></i>
-              Github repo
-            </a>
-          </div>
-          <div class="close" (click)="closeProject()">
-            <i class="fas fa-times"></i>
-          </div>
-        </div>
-      </div>
->>>>>>> Added window size calculation on resize for project-view
-=======
-      <div class="btn" (click)="currentProject = projects[projectIndex]">Learn more</div>
->>>>>>> Project view extracted to a new component
     </div>
   </div>
   <app-project-view
       [currentProject]="currentProject"
       (projectEvent)="onProjectEvent($event)"
       *ngIf="currentProject !== null"
-      class="project-view"
   ></app-project-view>
 </div>

@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { ProjectViewComponent } from './project-view/project-view.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -8,7 +7,6 @@ import { ProjectViewComponent } from './project-view/project-view.component';
 })
 export class ProjectsComponent {
 
-  @ViewChild(ProjectViewComponent, {static: false}) projectView = null;
   currentProject = null;
 
   projects = [
@@ -37,7 +35,7 @@ export class ProjectsComponent {
     },
     {
       name: 'Top 10 rock artists',
-      madeWith: 'Angular with infinite scroll',
+      madeWith: 'Angular with infinite scroll, Bootstrap',
       description: 'This application shows Top 10 rock artists and their albums',
       live: 'https://markonastic.github.io/top10-rock-artists/',
       github: 'https://github.com/markonastic/top10-rock-artists',
@@ -52,25 +50,5 @@ export class ProjectsComponent {
 
   onProjectEvent(event: any) {
     this.currentProject = event;
-<<<<<<< HEAD
   }
-<<<<<<< HEAD
-=======
-
-  closeProject() {
-    this.showProject = false;
-    setTimeout(() => {
-      this.currentProject = null;
-    }, 300);
-=======
->>>>>>> Project view extracted to a new component
-  }
-<<<<<<< HEAD
-
-  onScroll(el: HTMLElement) {
-    el.style.height = window.innerHeight + 'px';
-  }
->>>>>>> Added window size calculation on resize for project-view
-=======
->>>>>>> View project height set to 100% for adroid chrome
 }
