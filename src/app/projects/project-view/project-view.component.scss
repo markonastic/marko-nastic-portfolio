@@ -100,30 +100,7 @@
         display: flex;
         justify-content: center;
         .btn {
-          border: 2px solid #04c2c9;
-          background: transparent;
-          color: #04c2c9;
-          height: 3rem;
-          width: 9rem;
-          cursor: pointer;
           margin-right: 1rem;
-          transition: background-color ease-in-out 0.3s,
-                      border-color ease-in-out 0.3s;
-          &:hover {
-            background-color: #04c2c9;
-            color: white;
-          }
-          a {
-            text-decoration: none;
-            color: inherit;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            i {
-              margin-right: 0.3rem;
-            }
-          }
         }
         .close {
           font-size: 2rem;

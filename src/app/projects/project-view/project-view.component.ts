@@ -10,6 +10,20 @@ export class ProjectViewComponent implements OnInit, AfterViewInit {
   @Input() currentProject = null;
   @Output() projectEvent = new EventEmitter<any>();
 
+  btnStyles = {
+    elStyle: {
+      color: '#04c2c9',
+      borderColor: '#04c2c9',
+      backgroundColor: 'transparent',
+      fontSize: '1rem'
+    },
+
+    hoverStyle: {
+      color: 'white',
+      backgroundColor: '#04c2c9'
+    }
+  };
+
   currentSlide = 0;
   carouselWidth = 100;
   direction = 1;
@@ -75,5 +89,9 @@ export class ProjectViewComponent implements OnInit, AfterViewInit {
   closeProject() {
     this.projectView.style.transform = 'scale(0)';
     this.close = true;
+  }
+
+  openInNewTab(url: string) {
+    window.open(url);
   }
 }

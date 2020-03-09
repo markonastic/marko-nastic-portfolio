@@ -1,0 +1,8 @@
+<div class="button" #button
+     [ngStyle]="styles.elStyle"
+     (mouseover)="onHover(button, true)"
+     (mouseout)="onHover(button, false)"
+> {{ text }}
+  <span *ngIf="text && fontAwesome">&nbsp;</span>
+  <i [class]="fontAwesome" *ngIf="fontAwesome"></i>
+</div>

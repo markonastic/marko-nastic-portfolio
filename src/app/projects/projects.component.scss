@@ -55,30 +55,15 @@
         opacity: 0;
         top: 0;
         transition: top ease-in-out 0.3s,
-          opacity ease-in-out 0.3s;
+                    opacity ease-in-out 0.3s;
       }
 
       .btn {
         position: absolute;
         bottom: 0;
-        border: 2px solid #e31b6d;
-        height: 3rem;
-        width: 10rem;
-        font-size: 1.2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
         opacity: 0;
-        transition: background-color ease-in-out 0.3s,
-          border-color ease-in-out 0.3s,
-          bottom ease-in-out 0.3s,
-          opacity ease-in-out 0.3s;
-
-        &:hover {
-          background-color: #e31b6d;
-          color: white;
-        }
+        transition: opacity ease-in-out 0.3s,
+                    bottom ease-in-out 0.3s;
       }
     }
   }

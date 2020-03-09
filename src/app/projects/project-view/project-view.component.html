@@ -23,18 +23,13 @@
       </div>
       <p class="description">{{ currentProject.description }}</p>
       <div class="buttons">
-        <div class="btn">
-          <a href="{{ currentProject.live }}" target="_blank">
-            <i class="fas fa-external-link-alt"></i>
-            Live page
-          </a>
-        </div>
-        <div class="btn">
-          <a href="{{ currentProject.github }}" target="_blank">
-            <i class="fas fa-external-link-alt"></i>
-            Github repo
-          </a>
-        </div>
+        <app-button class="btn"
+                    *ngFor="let page of currentProject.pages"
+                    [text]="page.name"
+                    fontAwesome="fas fa-external-link-alt"
+                    (click)="openInNewTab(page.url)"
+                    [styles]="btnStyles"
+        ></app-button>
         <div class="close" (click)="closeProject()">
           <i class="fas fa-times"></i>
         </div>

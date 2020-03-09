@@ -107,25 +107,7 @@
     }
 
     .btn {
-      width: 33%;
-      border: 2px solid white;
-      display: flex;
-      justify-content: center;
       align-self: flex-end;
-      align-items: center;
-      cursor: pointer;
-      align-self: flex-end;
-      transition: background-color ease-in-out 0.3s,
-        border-color ease-in-out 0.3s;
-
-      &:hover {
-        background-color: #04c2c9;
-        border-color: #04c2c9;
-      }
-
-      &:focus {
-        outline: none;
-      }
     }
   }
 }
@@ -135,24 +117,16 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 33vh;
+  height: 13rem;
   position: relative;
   background: #1b242f;
   text-align: center;
   color: white;
-  padding: 3rem 3rem 2rem 3rem;
+  padding: 3rem 3rem 2rem;
 
   .arrow-up {
     position: absolute;
     top: -1.5rem;
-    background: #e31b6d;
-    height: 3rem;
-    width: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    cursor: pointer;
   }
 
   .icons {

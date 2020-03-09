@@ -6,7 +6,7 @@
   <h1>Contact</h1>
   <h3>Have a question or want to work together?</h3>
 
-  <form action="submit" [formGroup]='contactForm' (ngSubmit)="sendEmail()" class="contact-form">
+  <form #formRef="ngForm" action="submit" [formGroup]='contactForm' (ngSubmit)="sendEmail()" class="contact-form">
     <input type="text" formControlName="name" [ngClass]="{'input-danger': name.touched && name.invalid}" id="name" placeholder="Name" required>
     <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
       <div *ngIf="name.errors.required">Username is required</div>
@@ -27,13 +27,19 @@
       <div *ngIf="message.errors.minlength">Message should have minimum 50 characters</div>
     </div>
       <div *ngIf="emailSuccess" class="alert alert-success">Your message was sent successfully.</div>
-    <input type="submit" value="Submit" class="btn">
+    <app-button class="btn"
+                text="Send"
+                (click)="formRef.onSubmit(undefined)"
+                [styles]="btnStyles"
+    ></app-button>
   </form>
 </div>
 <footer>
-  <div class="arrow-up" (click)="scrollToHome()">
-    <i class="fas fa-angle-double-up"></i>
-  </div>
+  <app-button class="arrow-up"
+              fontAwesome="fas fa-angle-double-up"
+              [styles]="arrowStyle"
+              (click)="scrollToHome()"
+  ></app-button>
   <div class="icons">
     <div *ngFor="let contact of contacts" class="icon">
       <a [href]="contact.link" target="_blank">
