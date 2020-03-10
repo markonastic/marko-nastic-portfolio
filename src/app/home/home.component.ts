@@ -7,20 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  btnStyles = {
-    elStyle: {
-      borderColor: 'white',
-      backgroundColor: 'transparent',
-      width: '12rem',
-      height: '4rem'
-    },
-
-    hoverStyle: {
-      backgroundColor: '#05c2c9',
-      borderColor: '#05c2c9',
-    }
-  };
-
   constructor() { }
 
   scrollToAbout() {

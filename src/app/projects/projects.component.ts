@@ -9,19 +9,6 @@ export class ProjectsComponent {
 
   currentProject = null;
 
-  btnStyles = {
-    elStyle: {
-      color: 'inherit',
-      borderColor: '#e31b6d',
-      backgroundColor: 'transparent',
-    },
-
-    hoverStyle: {
-      backgroundColor: '#e31b6d',
-      color: 'white',
-    }
-  };
-
   projects = [
     {
       name: 'Weather app',

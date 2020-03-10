@@ -28,18 +28,21 @@
     </div>
       <div *ngIf="emailSuccess" class="alert alert-success">Your message was sent successfully.</div>
     <app-button class="btn"
-                text="Send"
                 (click)="formRef.onSubmit(undefined)"
-                [styles]="btnStyles"
+                btnType='whiteAqua'
+                text="Send"
     ></app-button>
   </form>
 </div>
 <footer>
   <app-button class="arrow-up"
-              fontAwesome="fas fa-angle-double-up"
-              [styles]="arrowStyle"
               (click)="scrollToHome()"
-              hover="false"
+              btnType='pink'
+              onHover='grow'
+              fontAwesome="fas fa-angle-double-up"
+              isSquare="true"
+              hasBorder="false"
+              fontSize="big"
   ></app-button>
   <div class="icons">
     <div *ngFor="let contact of contacts" class="icon">

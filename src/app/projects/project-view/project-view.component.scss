@@ -30,13 +30,6 @@
         position: absolute;
         bottom: 0;
         z-index: 1;
-        line-height: 3rem;
-        width: 4rem;
-        text-align: center;
-        font-size: 2rem;
-        color: white;
-        background: #00000061;
-        cursor: pointer;
 
         &.btn-left {
           left: 0;
@@ -103,14 +96,8 @@
           margin-right: 1rem;
         }
         .close {
-          font-size: 2rem;
-          text-align: center;
-          line-height: 3rem;
-          width: 3rem;
           right: 0;
           position: absolute;
-          cursor: pointer;
-          opacity: 0.6;
         }
       }
     }

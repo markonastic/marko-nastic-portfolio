@@ -1,8 +1,21 @@
-<div class="button" #button
-     [ngStyle]="styles.elStyle"
-     (mouseover)="onHover(button, true)"
-     (mouseout)="onHover(button, false)"
+<div class="button"
+     [ngClass]="{
+        'white-aqua': btnType === 'whiteAqua',
+        'pink': btnType === 'pink',
+        'pink-white': btnType === 'pinkWhite',
+        'aqua-white': btnType === 'aquaWhite',
+        grey: btnType === 'grey',
+        'grey-bg': btnType === 'greyBg',
+        'border': !hasBorder,
+        big: isBig,
+        square: isSquare,
+        'font-small': fontSize === 'small',
+        'font-big': fontSize === 'big',
+        'grow': onHover === 'grow'
+      }"
 > {{ text }}
   <span *ngIf="text && fontAwesome">&nbsp;</span>
-  <i [class]="fontAwesome" *ngIf="fontAwesome"></i>
+  <span class="font-awesome">
+    <i [class]="fontAwesome" *ngIf="fontAwesome"></i>
+  </span>
 </div>

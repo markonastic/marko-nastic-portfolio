@@ -6,11 +6,10 @@
         <img src="{{project.images[0]}}" alt="">
       </div>
       <h3 class="title">{{project.name}}</h3>
-      <!-- <div class="btn" (click)="currentProject = projects[projectIndex]">Learn more</div> -->
       <app-button class="btn"
-                  text="Learn more"
                   (click)="currentProject = projects[projectIndex]"
-                  [styles]="btnStyles"
+                  btnType="pinkWhite"
+                  text="Learn more"
       ></app-button>
     </div>
   </div>

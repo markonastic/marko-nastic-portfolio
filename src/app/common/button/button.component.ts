@@ -9,28 +9,14 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
 
   @Input() text: string;
-  @Input() styles: {
-    elStyle: CSSStyleDeclaration,
-    hoverStyle: CSSStyleDeclaration
-  };
   @Input() fontAwesome: string;
   @Input() hover: boolean;
+  @Input() btnType = 'whiteAqua';
+  @Input() hasBorder = false;
+  @Input() isBig = false;
+  @Input() isSquare = false;
+  @Input() fontSize: string;
+  @Input() onHover: string;
 
   constructor() { }
-
-  onHover(button: HTMLElement, hovered: boolean) {
-    if (this.hover) { return; }
-
-    const { style } = button;
-    const { elStyle, hoverStyle } = this.styles;
-    if (hovered) {
-      style.backgroundColor = hoverStyle.backgroundColor;
-      style.borderColor = hoverStyle.borderColor;
-      style.color = hoverStyle.color;
-    } else {
-      style.backgroundColor = elStyle.backgroundColor;
-      style.borderColor = elStyle.borderColor;
-      style.color = elStyle.color;
-    }
-  }
 }

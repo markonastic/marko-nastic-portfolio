@@ -2,19 +2,29 @@
   <div class="mask" (click)="closeProject()"></div>
   <div class="main-container">
     <div class="carousel-container">
-      <div class="btn btn-left" (click)="slideImage(-1)">
-        <i class="fas fa-angle-left"></i>
-      </div>
+      <app-button class="btn btn-left"
+                  (click)="slideImage(-1)"
+                  btnType="greyBg"
+                  isSquare="true"
+                  hasBorder="false"
+                  fontSize="big"
+                  fontAwesome="fas fa-angle-left"
+      ></app-button>
       <div class="carousel">
         <div class="slider" (transitionend)="sliderTransitionEnd()" [ngStyle]="{width: carouselWidth + '%'}">
           <div class="slide" *ngFor="let image of currentProject.images">
-            <img src="{{image}}" alt="" class="img">
+            <img [src]="image" class="img">
           </div>
         </div>
       </div>
-      <div class="btn btn-right" (click)="slideImage(1)">
-        <i class="fas fa-angle-right"></i>
-      </div>
+      <app-button class="btn btn-right"
+                  (click)="slideImage(1)"
+                  btnType="greyBg"
+                  isSquare="true"
+                  hasBorder="false"
+                  fontSize="big"
+                  fontAwesome="fas fa-angle-right"
+      ></app-button>
     </div>
     <div class="details-container">
       <div class="header">
@@ -24,15 +34,22 @@
       <p class="description">{{ currentProject.description }}</p>
       <div class="buttons">
         <app-button class="btn"
+                    (click)="openInNewTab(page.url)"
                     *ngFor="let page of currentProject.pages"
+                    btnType="aquaWhite"
                     [text]="page.name"
                     fontAwesome="fas fa-external-link-alt"
-                    (click)="openInNewTab(page.url)"
-                    [styles]="btnStyles"
+                    fontSize="small"
         ></app-button>
-        <div class="close" (click)="closeProject()">
-          <i class="fas fa-times"></i>
-        </div>
+        <app-button class="close"
+                    (click)="closeProject()"
+                    btnType="grey"
+                    onHover='grow'
+                    fontAwesome="fas fa-times"
+                    fontSize="big"
+                    isSquare="true"
+                    hasBorder="false"
+        ></app-button>
       </div>
     </div>
   </div>

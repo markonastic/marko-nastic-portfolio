@@ -10,29 +10,6 @@ import { EmailService, FormspreeResponse } from '../services/email-service/email
 })
 export class ContactComponent implements OnInit {
 
-  btnStyles = {
-    elStyle: {
-      backgroundColor: '#1e242c',
-      borderColor: 'white',
-      borderRadius: '0.2rem',
-      height: '2.5rem'
-    },
-
-    hoverStyle: {
-      backgroundColor: '#04c2c9',
-      borderColor: '#04c2c9',
-    }
-  };
-
-  arrowStyle = {
-    elStyle: {
-      backgroundColor: '#e31b6d',
-      width: '3rem',
-      fontSize: '2rem',
-      border: 'none'
-    }
-  };
-
   contactForm = new FormGroup({
     name: new FormControl('', [
       Validators.required,
