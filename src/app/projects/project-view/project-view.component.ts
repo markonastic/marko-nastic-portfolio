@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { ProjectInterface } from './../project';
 
 @Component({
   selector: 'app-project-view',
@@ -7,13 +8,13 @@ import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@
 })
 export class ProjectViewComponent implements OnInit, AfterViewInit {
 
-  @Input() currentProject = null;
+  @Input() currentProject: ProjectInterface = null;
   @Output() projectEvent = new EventEmitter<any>();
 
   currentSlide = 0;
-  carouselWidth = 100;
+  carouselWidth: number;
   direction = 1;
-  translateAmount = null;
+  translateAmount: number;
   projectView: HTMLElement;
   close = false;
 

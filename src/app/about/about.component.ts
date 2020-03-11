@@ -1,24 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SkillInterface } from './skill';
+import { SkillsService } from './../services/skills-service/skills.service';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit {
 
-  skills = [
-    {name: 'HTML', per: '90%'},
-    {name: 'CSS', per: '80%'},
-    {name: 'SASS', per: '70%'},
-    {name: 'Bootstrap', per: '80%'},
-    {name: 'JavaScript', per: '60%'},
-    {name: 'Angular', per: '50%'},
-    {name: 'Git', per: '70%'},
-    {name: '.NET', per: '40%'},
-    {name: 'SQL', per: '50%'}
-  ];
+  skills: SkillInterface[] = null;
 
-  constructor() { }
+  constructor(private skillsService: SkillsService) { }
 
+  ngOnInit() {
+    this.skillsService.getSkills().subscribe((skills: SkillInterface[]) => this.skills = skills);
+  }
 }

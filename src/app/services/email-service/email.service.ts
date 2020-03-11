@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-export class FormspreeResponse {
+export interface FormspreeResponse {
   ok: boolean;
 }
 
