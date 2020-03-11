@@ -4,10 +4,7 @@
     <div class="carousel-container">
       <app-button class="btn btn-left"
                   (click)="slideImage(-1)"
-                  btnType="greyBg"
-                  isSquare="true"
                   hasBorder="false"
-                  fontSize="big"
                   fontAwesome="fas fa-angle-left"
       ></app-button>
       <div class="carousel">
@@ -19,11 +16,8 @@
       </div>
       <app-button class="btn btn-right"
                   (click)="slideImage(1)"
-                  btnType="greyBg"
-                  isSquare="true"
-                  hasBorder="false"
-                  fontSize="big"
                   fontAwesome="fas fa-angle-right"
+                  hasBorder="false"
       ></app-button>
     </div>
     <div class="details-container">
@@ -36,18 +30,12 @@
         <app-button class="btn"
                     (click)="openInNewTab(page.url)"
                     *ngFor="let page of currentProject.pages"
-                    btnType="aquaWhite"
                     [text]="page.name"
                     fontAwesome="fas fa-external-link-alt"
-                    fontSize="small"
         ></app-button>
         <app-button class="close"
                     (click)="closeProject()"
-                    btnType="grey"
-                    onHover='grow'
                     fontAwesome="fas fa-times"
-                    fontSize="big"
-                    isSquare="true"
                     hasBorder="false"
         ></app-button>
       </div>

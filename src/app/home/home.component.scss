@@ -17,4 +17,13 @@
       white-space: nowrap;
     }
   }
+
+  .btn::ng-deep .button {
+    width: 12rem;
+    height: 4rem;
+    &:hover {
+      background-color: #04c2c9;
+      border-color: #04c2c9;
+    }
+  }
 }

@@ -12,73 +12,9 @@
               border-color ease-in-out 0.3s,
               color ease-in-out 0.3s;
 
-  &.white-aqua {
-    border-color: white;
-    &:hover {
-      background-color: #04c2c9;
-      border-color: #04c2c9;
-    }
-  }
-
-  &.pink {
-    background-color: #e31b6d;
-    border-color: #e31b6d;
-  }
-
-  &:hover {
-    &.grow {
-      font-size: 2.5rem;
-    }
-  }
-
-  &.pink-white {
-    color: #e31b6d;
-    border-color: #e31b6d;
-    &:hover {
-      color: white;
-      background-color: #e31b6d;
-    }
-  }
-
-  &.aqua-white {
-    color: #04c2c9;
-    border-color: #04c2c9;
-    &:hover {
-      color: white;
-      background-color: #04c2c9;
-    }
-  }
-
-  &.grey {
-    color: grey;
-  }
-
-  &.grey-bg {
-    background-color: #00000087;
-  }
-
   &.border {
-    border-width: 2px;
-    border-style: solid;
-  }
-
-  &.big {
-    width: 12rem;
-    height: 4rem;
-  }
-
-  &.square {
-    width: 3rem;
-  }
-
-  &.font {
-    &-small {
-      font-size: 1rem;
-    }
-
-    &-big {
-      font-size: 2rem;
-    }
+    border: 2px solid white;
+    border-radius: 0.2rem;
   }
 
   .font-awesome {

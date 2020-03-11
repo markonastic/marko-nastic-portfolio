@@ -26,17 +26,21 @@
     .carousel-container {
       position: relative;
 
-      .btn {
+      .btn::ng-deep {
         position: absolute;
         bottom: 0;
         z-index: 1;
-
         &.btn-left {
           left: 0;
         }
 
         &.btn-right {
           right: 0;
+        }
+        .button {
+          background-color: #00000087;
+          width: 3rem;
+          font-size: 2rem;
         }
       }
 
@@ -92,12 +96,31 @@
         position: relative;
         display: flex;
         justify-content: center;
-        .btn {
+
+        .btn::ng-deep {
           margin-right: 1rem;
+          .button {
+            color: #04c2c9;
+            border-color: #04c2c9;
+            font-size: 1rem;
+            &:hover {
+              color: white;
+              background-color: #04c2c9;
+            }
+          }
         }
-        .close {
-          right: 0;
+
+        .close::ng-deep {
           position: absolute;
+          right: 0;
+          .button {
+            color: grey;
+            width: 3rem;
+            font-size: 2rem;
+            &:hover {
+              font-size: 2.5rem;
+            }
+          }
         }
       }
     }

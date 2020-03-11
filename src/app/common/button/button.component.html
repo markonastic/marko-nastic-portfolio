@@ -1,17 +1,6 @@
 <div class="button"
      [ngClass]="{
-        'white-aqua': btnType === 'whiteAqua',
-        'pink': btnType === 'pink',
-        'pink-white': btnType === 'pinkWhite',
-        'aqua-white': btnType === 'aquaWhite',
-        grey: btnType === 'grey',
-        'grey-bg': btnType === 'greyBg',
-        'border': !hasBorder,
-        big: isBig,
-        square: isSquare,
-        'font-small': fontSize === 'small',
-        'font-big': fontSize === 'big',
-        'grow': onHover === 'grow'
+       border: !hasBorder
       }"
 > {{ text }}
   <span *ngIf="text && fontAwesome">&nbsp;</span>

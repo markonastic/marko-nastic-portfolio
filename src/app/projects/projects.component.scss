@@ -58,12 +58,20 @@
                     opacity ease-in-out 0.3s;
       }
 
-      .btn {
+      .btn::ng-deep {
         position: absolute;
         bottom: 0;
         opacity: 0;
         transition: opacity ease-in-out 0.3s,
                     bottom ease-in-out 0.3s;
+        .button {
+          color: #e31b6d;
+          border-color: #e31b6d;
+          &:hover {
+            color: white;
+            background-color: #e31b6d;
+          }
+        }
       }
     }
   }
