@@ -12,13 +12,14 @@ export class AppComponent implements AfterViewInit {
   aboutOffset: number = null;
   projectsOffset: number = null;
   contactOffset: number = null;
-  homeElement;
+  homeElementHeight: number = null;
+
   ngAfterViewInit() {
     this.calcOffset();
   }
 
   calcOffset() {
-    this.homeElement = (document.querySelector('#home') as HTMLElement).getBoundingClientRect().height;
+    this.homeElementHeight = (document.querySelector('#home') as HTMLElement).getBoundingClientRect().height;
     this.homeOffset = (document.querySelector('#home') as HTMLElement).offsetTop;
     this.aboutOffset = (document.querySelector('#about') as HTMLElement).offsetTop;
     this.projectsOffset = (document.querySelector('#projects') as HTMLElement).offsetTop;
@@ -27,7 +28,7 @@ export class AppComponent implements AfterViewInit {
 
   checkOffset() {
     const { pageYOffset } = window;
-    const amount = this.homeElement / 3;
+    const amount = this.homeElementHeight / 3;
     if (pageYOffset >= this.homeOffset - amount && pageYOffset < this.aboutOffset - amount) {
       this.activeRoute = 0;
     } else if (pageYOffset >= this.aboutOffset - amount && pageYOffset < this.projectsOffset - amount) {

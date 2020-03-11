@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EmailService, FormspreeResponse } from '../services/email-service/email.service';
 
@@ -8,7 +7,9 @@ import { EmailService, FormspreeResponse } from '../services/email-service/email
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
+
+  emailSuccess = false;
 
   contactForm = new FormGroup({
     name: new FormControl('', [
@@ -37,23 +38,7 @@ export class ContactComponent implements OnInit {
     return this.contactForm.get('message');
   }
 
-  sanitizedUrl = null;
-
-  contacts = [
-    {link: 'https://www.linkedin.com/in/markonastic/', icon: 'fab fa-linkedin'},
-    {link: '', icon: 'fab fa-skype'},
-    {link: 'mailto:marko.nastic@hotmail.com', icon: 'fas fa-at'},
-    {link: 'https://github.com/markonastic', icon: 'fab fa-github'},
-  ];
-
-  emailSuccess = false;
-
-  constructor(private sanitizer: DomSanitizer, private emailService: EmailService) {}
-
-  ngOnInit() {
-    this.sanitizedUrl = this.sanitizer.bypassSecurityTrustUrl('skype:markonastic90?userinfo');
-    this.contacts[1].link = this.sanitizedUrl;
-  }
+  constructor(private emailService: EmailService) {}
 
   sendEmail() {
     if (this.contactForm.valid) {
@@ -82,9 +67,5 @@ export class ContactComponent implements OnInit {
     this.name.reset();
     this.email.reset();
     this.message.reset();
-  }
-
-  scrollToHome() {
-    document.querySelector('#home').scrollIntoView();
   }
 }

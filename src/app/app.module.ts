@@ -13,6 +13,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectViewComponent } from './projects/project-view/project-view.component';
 import { ButtonComponent } from './common/button/button.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ButtonComponent } from './common/button/button.component';
     ProjectsComponent,
     ContactComponent,
     ProjectViewComponent,
-    ButtonComponent
+    ButtonComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
