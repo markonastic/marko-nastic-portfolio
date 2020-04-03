@@ -1,0 +1,22 @@
+[
+  {
+    "name": "linkedin",
+    "url": "https://www.linkedin.com/in/markonastic/",
+    "icon": "fab fa-linkedin"
+  },
+  {
+    "name": "skype",
+    "url": "skype:markonastic90?chat",
+    "icon": "fab fa-skype"
+  },
+  {
+    "name": "mail",
+    "url": "mailto:marko.nastic@hotmail.com",
+    "icon": "fas fa-at"
+  },
+  {
+    "name": "github",
+    "url": "https://github.com/markonastic",
+    "icon": "fab fa-github"
+  }
+]
