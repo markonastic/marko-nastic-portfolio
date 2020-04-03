@@ -1,0 +1,46 @@
+.carousel-container {
+
+  &::ng-deep .btn {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    &.btn-left {
+      left: 0;
+    }
+
+    &.btn-right {
+      right: 0;
+    }
+    .button {
+      background-color: #00000087;
+      width: 3rem;
+      font-size: 2rem;
+    }
+  }
+
+  .carousel {
+    background: #08878c;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    overflow: hidden;
+
+    .slider {
+      display: flex;
+      flex-shrink: 0;
+      transition: all ease-in-out 0.5s;
+
+      .slide {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        .img {
+          width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+}
