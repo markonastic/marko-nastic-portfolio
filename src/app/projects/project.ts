@@ -1,10 +1,12 @@
-export interface ProjectInterface {
+export interface IProject {
   name: string;
   madeWith: string;
   description: string;
-  pages: [{
-    name: string,
-    url: string
-  }];
+  pages: IProjectPages[];
   images: string[];
+}
+
+export interface IProjectPages {
+  name: string;
+  url: string;
 }

@@ -1,5 +1,7 @@
+import { ContactService } from './../services/contact/contact.service';
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { IContact } from './contact';
 
 @Component({
   selector: 'app-footer',
@@ -8,24 +10,26 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class FooterComponent implements OnInit {
 
-  sanitizedUrl = null;
+  public contacts: IContact[] = null;
 
-  contacts = [
-    {link: 'https://www.linkedin.com/in/markonastic/', icon: 'fab fa-linkedin'},
-    {link: '', icon: 'fab fa-skype'},
-    {link: 'mailto:marko.nastic@hotmail.com', icon: 'fas fa-at'},
-    {link: 'https://github.com/markonastic', icon: 'fab fa-github'},
-  ];
+  constructor(private contactService: ContactService, private sanitizer: DomSanitizer) {}
 
-
-  constructor(private sanitizer: DomSanitizer) {}
-
-  ngOnInit() {
-    this.sanitizedUrl = this.sanitizer.bypassSecurityTrustUrl('skype:markonastic90?userinfo');
-    this.contacts[1].link = this.sanitizedUrl;
+  public ngOnInit(): void {
+    this.contactService.getContacts().subscribe((contacts: IContact[]) => {
+      this.contacts = contacts;
+      this.sanitizeUrl();
+    });
   }
 
-  scrollToHome() {
+  // Sanitizing skype url because Angular compiler sees it as unsafe
+  public sanitizeUrl(): void {
+    const skypeContact: IContact = this.contacts.find((contact: IContact) => contact.name === 'skype');
+    const sanitizedUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(skypeContact.url);
+
+    skypeContact.url = sanitizedUrl as string;
+  }
+
+  public scrollToHome(): void {
     document.querySelector('#home').scrollIntoView();
   }
 }

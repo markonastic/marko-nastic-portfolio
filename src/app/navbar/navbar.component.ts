@@ -8,30 +8,30 @@ import { Component, Input } from '@angular/core';
 
 export class NavbarComponent {
 
-  @Input() activeRoute: number;
+  @Input() public activeRoute: number;
 
-  navs = ['home', 'about', 'projects', 'contact'];
-  showMenu = false;
+  public navs: string[] = ['home', 'about', 'projects', 'contact'];
+  public showMenu: boolean = false;
 
   constructor() { }
 
-  scrollToElement(nav: string) {
+  public scrollToElement(nav: string): void {
     document.querySelector('#' + nav).scrollIntoView();
   }
 
-  openMenu(el: HTMLElement) {
+  public openMenu(el: HTMLElement): void {
     this.showMenu = !this.showMenu;
     this.animateMenuBtn(el);
   }
 
-  onWindowEvent(el: HTMLElement) {
+  public onWindowEvent(el: HTMLElement): void {
     if (this.showMenu) {
       this.showMenu = false;
       this.animateMenuBtn(el);
     }
   }
 
-  animateMenuBtn(el: HTMLElement) {
+  public animateMenuBtn(el: HTMLElement): void {
     el.style.animation = this.showMenu ? 'rotateMenuBtn 0.3s' : 'rotateMenuBtnReverse 0.3s';
   }
 }

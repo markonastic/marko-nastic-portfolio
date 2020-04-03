@@ -1,0 +1,20 @@
+<div class="details-container">
+  <div class="header">
+    <span class="title">{{ currentProject.name}}</span><br>
+    <span class="made">{{ currentProject.madeWith }}</span>
+  </div>
+  <p class="description">{{ currentProject.description }}</p>
+  <div class="buttons">
+    <app-button class="btn"
+                (click)="openInNewTab(page.url)"
+                *ngFor="let page of currentProject.pages"
+                [text]="page.name"
+                fontAwesome="fas fa-external-link-alt"
+    ></app-button>
+    <app-button class="close"
+                (click)="closeProjectEvent.emit(true)"
+                fontAwesome="fas fa-times"
+                hasBorder="false"
+    ></app-button>
+  </div>
+</div>
