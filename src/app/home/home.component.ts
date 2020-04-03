@@ -9,7 +9,7 @@ export class HomeComponent {
 
   constructor() { }
 
-  scrollToAbout() {
+  public scrollToAbout(): void {
     document.querySelector('#about').scrollIntoView();
   }
 }

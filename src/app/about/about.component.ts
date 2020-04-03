@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SkillInterface } from './skill';
-import { SkillsService } from './../services/skills-service/skills.service';
+import { ISkill } from './skill';
+import { SkillsService } from '../services/skills/skills.service';
 
 @Component({
   selector: 'app-about',
@@ -9,11 +9,11 @@ import { SkillsService } from './../services/skills-service/skills.service';
 })
 export class AboutComponent implements OnInit {
 
-  skills: SkillInterface[] = null;
+  public skills: ISkill[] = null;
 
   constructor(private skillsService: SkillsService) { }
 
-  ngOnInit() {
-    this.skillsService.getSkills().subscribe((skills: SkillInterface[]) => this.skills = skills);
+  public ngOnInit(): void {
+    this.skillsService.getSkills().subscribe((skills: ISkill[]) => this.skills = skills);
   }
 }

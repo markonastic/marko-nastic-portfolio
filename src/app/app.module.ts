@@ -14,6 +14,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectViewComponent } from './projects/project-view/project-view.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FooterComponent } from './footer/footer.component';
+import { GalleryComponent } from './projects/project-view/gallery/gallery.component';
+import { DetailsComponent } from './projects/project-view/details/details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FooterComponent } from './footer/footer.component';
     ContactComponent,
     ProjectViewComponent,
     ButtonComponent,
-    FooterComponent
+    FooterComponent,
+    GalleryComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

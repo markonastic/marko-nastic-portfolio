@@ -8,9 +8,9 @@ import { Component, Input } from '@angular/core';
 
 export class ButtonComponent {
 
-  @Input() text: string;
-  @Input() fontAwesome: string;
-  @Input() hasBorder = false;
+  @Input() public text: string;
+  @Input() public fontAwesome: string;
+  @Input() public hasBorder: boolean = false;
 
   constructor() { }
 }

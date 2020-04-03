@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { EmailService, FormspreeResponse } from '../services/email-service/email.service';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { EmailService, IFormspreeResponse } from '../services/email/email.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,9 +9,9 @@ import { EmailService, FormspreeResponse } from '../services/email-service/email
 })
 export class ContactComponent {
 
-  emailSuccess = false;
+  public emailSuccess: boolean = false;
 
-  contactForm = new FormGroup({
+  public contactForm: FormGroup = new FormGroup({
     name: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
@@ -26,24 +26,24 @@ export class ContactComponent {
     ]),
   });
 
-  get name() {
+  public get name(): AbstractControl {
     return this.contactForm.get('name');
   }
 
-  get email() {
+  public get email(): AbstractControl {
     return this.contactForm.get('email');
   }
 
-  get message() {
+  public get message(): AbstractControl {
     return this.contactForm.get('message');
   }
 
   constructor(private emailService: EmailService) {}
 
-  sendEmail() {
+  public sendEmail(): void {
     if (this.contactForm.valid) {
       this.emailService.sendEmail(this.name.value, this.email.value, this.message.value)
-                        .subscribe((response: FormspreeResponse) => this.checkResponse(response));
+                       .subscribe((response: IFormspreeResponse) => this.checkResponse(response));
     } else if (this.name.untouched || this.name.invalid) {
         this.name.markAsTouched();
     } else if (this.email.untouched || this.email.invalid) {
@@ -53,8 +53,9 @@ export class ContactComponent {
     }
   }
 
-  checkResponse(response: FormspreeResponse) {
+  public checkResponse(response: IFormspreeResponse): void {
     this.emailSuccess = response.ok;
+
     if (this.emailSuccess) {
       setTimeout(() => {
         this.emailSuccess = false;
@@ -63,7 +64,7 @@ export class ContactComponent {
     }
   }
 
-  resetInputs() {
+  public resetInputs(): void {
     this.name.reset();
     this.email.reset();
     this.message.reset();

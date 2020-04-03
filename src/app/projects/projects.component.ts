@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectInterface } from './project';
-import { ProjectsService } from './../services/projects-service/projects.service';
+import { IProject } from './project';
+import { ProjectsService } from '../services/projects/projects.service';
 
 @Component({
   selector: 'app-projects',
@@ -9,16 +9,16 @@ import { ProjectsService } from './../services/projects-service/projects.service
 })
 export class ProjectsComponent implements OnInit {
 
-  projects: ProjectInterface[] = null;
-  currentProject: ProjectInterface = null;
+  public projects: IProject[] = null;
+  public currentProject: IProject = null;
 
   constructor(private projectService: ProjectsService) { }
 
-  ngOnInit() {
-    this.projectService.getProjects().subscribe((response: ProjectInterface[]) => this.projects = response);
+  public ngOnInit(): void {
+    this.projectService.getProjects().subscribe((response: IProject[]) => this.projects = response);
   }
 
-  onProjectEvent(event: any) {
+  public onProjectEvent(event: any): void {
     this.currentProject = event;
   }
 }

@@ -1,0 +1,71 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  padding: 1rem 2rem;
+  border-top: 0.2rem solid black;
+  font-weight: bold;
+  height: 100%;
+
+  .header {
+    .title {
+      font-size: 2rem;
+    }
+    .made {
+      opacity: 0.6;
+    }
+  }
+
+  .description {
+    border-top: 1px solid #80808078;
+    padding: 1.5rem 0;
+  }
+
+  .buttons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .btn::ng-deep {
+      margin-right: 1rem;
+      .button {
+        color: #04c2c9;
+        border-color: #04c2c9;
+        font-size: 1rem;
+        &:hover {
+          color: white;
+          background-color: #04c2c9;
+        }
+      }
+    }
+
+    .close::ng-deep {
+      position: absolute;
+      right: 0;
+      .button {
+        color: grey;
+        width: 3rem;
+        font-size: 2rem;
+        &:hover {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 900px) and (max-width: 500px) {
+  .details-container {
+    padding: 1rem;
+    .buttons {
+      justify-content: flex-start;
+      .btn {
+        margin-right: 0.5rem;
+      }
+      .close {
+        right: -0.7rem;
+      }
+    }
+  }
+}
