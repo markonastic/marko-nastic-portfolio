@@ -1,10 +1,13 @@
-<div class="button"
-     [ngClass]="{
-       border: !hasBorder
-      }"
-> {{ text }}
-  <span *ngIf="text && fontAwesome">&nbsp;</span>
-  <span class="font-awesome">
-    <i [class]="fontAwesome" *ngIf="fontAwesome"></i>
-  </span>
-</div>
+<button class="button"
+        [class]="color"
+        [type]="type"
+        [ngClass]="{
+          'button-medium': size === 'medium',
+          'button-big': size === 'big',
+          square: size === 'square'
+        }"
+>
+        {{ label }}
+        <span *ngIf="label && icon">&nbsp;</span>
+        <i [class]="icon" *ngIf="icon"></i>
+</button>

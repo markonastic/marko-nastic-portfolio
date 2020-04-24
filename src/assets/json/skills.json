@@ -1,38 +1,38 @@
 [
   {
     "name": "HTML",
-    "per": "90%"
+    "percent": "90%"
   },
   {
     "name": "CSS",
-    "per": "80%"
+    "percent": "80%"
   },
   {
     "name": "SASS",
-    "per": "70%"
+    "percent": "70%"
   },
   {
     "name": "Bootstrap",
-    "per": "80%"
+    "percent": "80%"
   },
   {
     "name": "JavaScript",
-    "per": "60%"
+    "percent": "60%"
   },
   {
     "name": "Angular",
-    "per": "50%"
+    "percent": "50%"
   },
   {
     "name": "Git",
-    "per": "70%"
+    "percent": "70%"
   },
   {
     "name": ".NET",
-    "per": "40%"
+    "percent": "40%"
   },
   {
     "name": "SQL",
-    "per": "50%"
+    "percent": "50%"
   }
 ]

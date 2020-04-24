@@ -1,9 +1,12 @@
+@import "../../../../assets/styles/variables";
+
 .carousel-container {
 
-  &::ng-deep .btn {
+  .btn {
     position: absolute;
     bottom: 0;
     z-index: 1;
+
     &.btn-left {
       left: 0;
     }
@@ -11,15 +14,14 @@
     &.btn-right {
       right: 0;
     }
-    .button {
-      background-color: #00000087;
-      width: 3rem;
-      font-size: 2rem;
+
+    &::ng-deep .button {
+      background-color: $transparent-black;
     }
   }
 
   .carousel {
-    background: #08878c;
+    background: $blue;
     height: 100%;
     display: flex;
     width: 100%;

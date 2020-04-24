@@ -15,23 +15,24 @@
     <input type="email" formControlName="email" [ngClass]="{'input-danger': email.touched && email.invalid}" id="email" placeholder="E-mail adress" required>
     <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
       <div *ngIf="email.errors.required">Email is required</div>
-      <div *ngIf="email.errors.pattern">Email should be in name@example.com format</div>
+      <div *ngIf="email.errors.email">Email should be in name@example.com format</div>
     </div>
     <div class="text">
       <textarea rows="10" #textarea formControlName="message" [ngClass]="{'input-danger': message.touched && message.invalid}" max-length="800" placeholder="Your message"
         required></textarea>
-      <span class="letterCount" *ngIf="textarea.value.length > 0">{{ textarea.value.length }}</span>
+      <span class="letterCount" *ngIf="textarea.value.length > 0 && textarea.value.length <= 50">{{ textarea.value.length }}</span>
     </div>
     <div class="alert alert-danger" *ngIf="message.touched && message.invalid">
       <div *ngIf="message.errors.required">Message is required</div>
       <div *ngIf="message.errors.minlength">Message should have minimum 50 characters</div>
     </div>
-      <div *ngIf="emailSuccess" class="alert alert-success">Your message was sent successfully.</div>
+      <div *ngIf="emailSuccess" class="alert alert-success">Your message was sent successfully</div>
+      <div *ngIf="emailSuccess === false" class="alert alert-danger">Invalid email</div>
     <app-button class="btn"
-                (click)="formRef.onSubmit(undefined)"
-                btnType='whiteAqua'
-                text="Send"
+                type="submit"
+                color="white-blue"
+                size="medium"
+                label="Send"
     ></app-button>
   </form>
 </div>
-

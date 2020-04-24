@@ -1,23 +1,69 @@
+@import "../../../assets/styles/variables";
+
 .button {
   background-color: transparent;
-  color: white;
-  height: 3rem;
-  width: 9rem;
-  font-size: 1.2rem;
+  color: $white;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  outline: none;
+  border: 2px solid $white;
+  border-radius: 0.2rem;
   transition: background-color ease-in-out 0.3s,
               border-color ease-in-out 0.3s,
               color ease-in-out 0.3s;
 
-  &.border {
-    border: 2px solid white;
-    border-radius: 0.2rem;
+  &-medium {
+    height: 3rem;
+    width: 9rem;
+    font-size: 1rem;
   }
 
-  .font-awesome {
-    font-size: 0.9em;
+  &-big {
+    height: 4rem;
+    width: 12rem;
+    font-size: 1.2rem;
+  }
+
+  &.square {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    border: none;
+
+    &:hover {
+      font-size: 2.5rem;
+    }
+  }
+
+  &.pink {
+    color: $pink;
+    border-color: $pink;
+
+    &:hover {
+      color: $white;
+      background-color: $pink;
+    }
+  }
+
+  &.blue {
+    color: $light-blue;
+    border-color: $light-blue;
+
+    &:hover {
+      color: $white;
+      background-color: $light-blue;
+    }
+  }
+
+  &.white-blue {
+    color: $white;
+    border-color: $white;
+
+    &:hover {
+      background-color: $light-blue;
+      border-color: $light-blue;
+    }
   }
 }

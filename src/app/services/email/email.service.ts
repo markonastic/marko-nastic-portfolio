@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 
 export interface IFormspreeResponse {
   ok: boolean;
@@ -18,14 +17,13 @@ export class EmailService {
   public sendEmail(name: string, email: string, message: string): Observable<IFormspreeResponse> {
     const headers: HttpHeaders = new HttpHeaders().append('Content-Type', 'application/json');
 
-    return this.http.post('https://formspree.io/mrgqonlg',
+    return this.http.post<IFormspreeResponse>('https://formspree.io/mrgqonlg',
                           {
                             name,
                             email,
                             message
                           },
                           { headers }
-                         )
-                    .pipe(map((response: IFormspreeResponse) => response));
+                         );
   }
 }

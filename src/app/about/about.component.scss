@@ -1,10 +1,12 @@
+@import "../../assets/styles/variables";
+
 .about {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #444649;
+  color: $main-blue;
   padding: 2rem 0;
 
   .content {
@@ -27,14 +29,14 @@
       }
 
       .img {
-        border: 0.4rem solid #05c2c9;
+        border: 0.4rem solid $light-blue;
         border-radius: 50%;
         width: 14rem;
         height: 14rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 0px 0px 0px 0.4rem rgb(37, 41, 52);
+        box-shadow: 0px 0px 0px 0.4rem $main-blue;
         overflow: hidden;
 
         img {
@@ -55,7 +57,7 @@
       .skill {
         display: grid;
         grid-template-columns: 6rem 1fr;
-        background-color: #eeeeee;
+        background-color: $transparent-grey;
         height: 1.9rem;
         line-height: 1.9rem;
         position: relative;
@@ -70,19 +72,19 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: #04c2c9;
-          color: #ffffff;
+          background-color: $light-blue;
+          color: $white;
           font-weight: bold;
         }
 
         .bar {
-          background-color: #00a1a7;
+          background-color: $blue;
           animation: fillSkillBar 3s;
 
           .per {
             position: absolute;
             right: 1rem;
-            color: #666666;
+            color: $light-grey;
           }
         }
       }

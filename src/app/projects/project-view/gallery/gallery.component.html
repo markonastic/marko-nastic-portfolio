@@ -1,8 +1,9 @@
 <div class="carousel-container">
   <app-button class="btn btn-left"
               (click)="slideImage(-1)"
+              size="square"
               hasBorder="false"
-              fontAwesome="fas fa-angle-left"
+              icon="fas fa-angle-left"
   ></app-button>
   <div class="carousel">
     <div class="slider" (transitionend)="sliderTransitionEnd()" [ngStyle]="{width: carouselWidth + '%'}">
@@ -13,7 +14,7 @@
   </div>
   <app-button class="btn btn-right"
               (click)="slideImage(1)"
-              fontAwesome="fas fa-angle-right"
-              hasBorder="false"
+              icon="fas fa-angle-right"
+              size="square"
   ></app-button>
 </div>

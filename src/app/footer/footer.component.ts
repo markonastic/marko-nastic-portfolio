@@ -1,7 +1,7 @@
 import { ContactService } from './../services/contact/contact.service';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { IContact } from './contact';
+import { IContact } from '../interfaces/contact';
 
 @Component({
   selector: 'app-footer',

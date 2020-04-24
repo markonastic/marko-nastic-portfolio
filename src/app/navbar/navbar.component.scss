@@ -1,3 +1,5 @@
+@import "../../assets/styles/variables";
+
 .nav-container {
   position: fixed;
   top: 0;
@@ -5,15 +7,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  background: #252934;
-  border-bottom: 0.2rem solid #05c2c9;
+  background: $main-blue;
+  border-bottom: 0.2rem solid $light-blue;
   z-index: 5;
 
   .navbar {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    color: white;
+    color: $white;
     width: 100%;
     max-width: 1000px;
 
@@ -23,14 +25,17 @@
       cursor: pointer;
       text-transform: capitalize;
       user-select: none;
-      &:hover {
-        color: #fb006785;
+
+      &.active {
+        color: $pink;
       }
+
+      &:hover {
+        color: $dark-pink;
+      }
+
       &:focus {
         outline: none;
-      }
-      &.active {
-        color: #e31b6d;
       }
     }
   }
@@ -45,9 +50,10 @@
     flex-direction: column;
     align-self: center;
     cursor: pointer;
+
     .line {
       height: 3px;
-      background: white;
+      background: $white;
       pointer-events: none;
     }
   }
@@ -59,7 +65,7 @@
       display: block;
       position: absolute;
       top: 3rem;
-      background: #333;
+      background: $grey;
       overflow: hidden;
       height: 0;
       transition: height ease-in 0.3s;
@@ -74,17 +80,22 @@
         text-align: center;
       }
     }
+
     .menu-btn {
       display: flex;
+
       &.close-btn {
         transform: rotate(45deg);
+
         .line {
           &:nth-child(1) {
             transform: translateY(0.6rem);
           }
+
           &:nth-child(2) {
             display: none;
           }
+
           &:nth-child(3) {
             transform-origin: bottom center;
             transform: rotate(-90deg) translate(0.7rem, 0.1rem);

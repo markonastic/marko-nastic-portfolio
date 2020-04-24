@@ -1,6 +1,8 @@
+@import "../../assets/styles/variables";
+
 .home {
   height: 100vh;
-  background: #252934;
+  background: $main-blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,20 +12,11 @@
   h1 {
     font-size: 3rem;
     font-weight: 500;
-    color: white;
+    color: $white;
 
     .highlight {
-      color: #e31b6d;
+      color: $pink;
       white-space: nowrap;
-    }
-  }
-
-  .btn::ng-deep .button {
-    width: 12rem;
-    height: 4rem;
-    &:hover {
-      background-color: #04c2c9;
-      border-color: #04c2c9;
     }
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ISkill } from './skill';
+import { ISkill } from './../interfaces/skill';
 import { SkillsService } from '../services/skills/skills.service';
 
 @Component({

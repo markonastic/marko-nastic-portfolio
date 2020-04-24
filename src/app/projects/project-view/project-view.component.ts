@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
-import { IProject } from './../project';
+import { IProject } from '../../interfaces/project';
 
 @Component({
   selector: 'app-project-view',
