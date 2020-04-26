@@ -16,8 +16,8 @@
     <div class="content-skills">
       <div class="skill" *ngFor="let skill of skills">
         <div class="name">{{ skill.name }}</div>
-        <div class="bar" [ngStyle]="{width: skill.per}">
-          <div class="per">{{ skill.per }}</div>
+        <div class="bar" [ngStyle]="{width: skill.percent}">
+          <div class="per">{{ skill.percent }}</div>
         </div>
       </div>
     </div>

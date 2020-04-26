@@ -7,6 +7,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: $main-blue;
   border-bottom: 0.2rem solid $light-blue;
   z-index: 5;
@@ -33,14 +34,46 @@
       &:hover {
         color: $dark-pink;
       }
+    }
+  }
 
-      &:focus {
-        outline: none;
+  #menu-btn {
+    display: none;
+
+    &:not(:checked) + label {
+      animation: rotateMenuBtnReverse 0.3s;
+    }
+
+    &:checked {
+
+      & ~ div.navbar {
+        height: 14rem;
+      }
+
+      & + label {
+        transform: rotate(45deg);
+        animation: rotateMenuBtn 0.3s;
+
+        .line {
+          &:nth-child(1) {
+            transform: translateY(0.6rem);
+          }
+
+          &:nth-child(2) {
+            display: none;
+          }
+
+          &:nth-child(3) {
+            transform-origin: bottom center;
+            transform: rotate(-90deg) translate(0.7rem, 0.1rem);
+          }
+        }
       }
     }
   }
 
-  .menu-btn {
+
+  label {
     width: 2rem;
     height: 1.4rem;
     position: absolute;
@@ -48,7 +81,6 @@
     display: none;
     justify-content: space-between;
     flex-direction: column;
-    align-self: center;
     cursor: pointer;
 
     .line {
@@ -70,10 +102,6 @@
       height: 0;
       transition: height ease-in 0.3s;
 
-      &.showMenu {
-        height: 14rem;
-      }
-
       .nav {
         margin-right: 0;
         padding: 1rem 0;
@@ -81,27 +109,8 @@
       }
     }
 
-    .menu-btn {
+    label {
       display: flex;
-
-      &.close-btn {
-        transform: rotate(45deg);
-
-        .line {
-          &:nth-child(1) {
-            transform: translateY(0.6rem);
-          }
-
-          &:nth-child(2) {
-            display: none;
-          }
-
-          &:nth-child(3) {
-            transform-origin: bottom center;
-            transform: rotate(-90deg) translate(0.7rem, 0.1rem);
-          }
-        }
-      }
     }
   }
 }

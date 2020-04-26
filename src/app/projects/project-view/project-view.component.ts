@@ -9,7 +9,7 @@ import { IProject } from '../../interfaces/project';
 export class ProjectViewComponent implements AfterViewInit {
 
   @Input() public currentProject: IProject = null;
-  @Output() public projectEvent = new EventEmitter<any>();
+  @Output() public closeProjectEvent = new EventEmitter<any>();
   private _projectView: HTMLElement;
   private _close = false;
 
@@ -24,7 +24,7 @@ export class ProjectViewComponent implements AfterViewInit {
 
   public projectViewTransitionEnd(): void {
     if (this._close) {
-      this.projectEvent.emit(null);
+      this.closeProjectEvent.emit(null);
     }
   }
 

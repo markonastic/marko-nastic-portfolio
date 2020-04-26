@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,9 +8,9 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  constructor() { }
+  constructor(private viewportScroller: ViewportScroller) { }
 
-  public scrollToAbout(): void {
-    document.querySelector('#about').scrollIntoView();
+  public scrollToAnchor(): void {
+    this.viewportScroller.scrollToAnchor('about');
   }
 }

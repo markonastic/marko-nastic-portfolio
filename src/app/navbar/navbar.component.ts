@@ -1,4 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { Component, Input, AfterViewInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { take } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -6,32 +10,29 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 
-export class NavbarComponent {
+export class NavbarComponent implements AfterViewInit, OnDestroy {
 
   @Input() public activeRoute: number;
-
+  public fragmentSubscription: Subscription = null;
   public navs: string[] = ['home', 'about', 'projects', 'contact'];
-  public showMenu: boolean = false;
 
-  constructor() { }
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private viewportScroller: ViewportScroller) { }
 
-  public scrollToElement(nav: string): void {
-    document.querySelector('#' + nav).scrollIntoView();
+  public ngAfterViewInit() {
+    this.fragmentSubscription = this.route.fragment.pipe(take(1)).subscribe((fragment: string) => {
+      if (fragment === '') {
+        this.router.navigate([''], { fragment: 'home' });
+      }
+    });
   }
 
-  public openMenu(el: HTMLElement): void {
-    this.showMenu = !this.showMenu;
-    this.animateMenuBtn(el);
+  public scrollToAnchor(nav: string): void {
+    this.viewportScroller.scrollToAnchor(nav);
   }
 
-  public onWindowEvent(el: HTMLElement): void {
-    if (this.showMenu) {
-      this.showMenu = false;
-      this.animateMenuBtn(el);
-    }
-  }
-
-  public animateMenuBtn(el: HTMLElement): void {
-    el.style.animation = this.showMenu ? 'rotateMenuBtn 0.3s' : 'rotateMenuBtnReverse 0.3s';
+  ngOnDestroy(): void {
+    this.fragmentSubscription.unsubscribe();
   }
 }

@@ -1,8 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
 import { FormGroup, Validators, AbstractControl, FormBuilder } from '@angular/forms';
-import { EmailService, IFormspreeResponse } from '../services/email/email.service';
+import { EmailService } from '../services/email/email.service';
 import { Subscription } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { IFormspreeResponse } from '../interfaces/formspree';
 
 @Component({
   selector: 'app-contact',
@@ -21,7 +22,6 @@ export class ContactComponent implements OnDestroy {
     email: ['', [
       Validators.required,
       Validators.email
-      // Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
     ]],
     message: ['', [
       Validators.required,
@@ -73,9 +73,6 @@ export class ContactComponent implements OnDestroy {
 
   public resetInputs(): void {
     this.contactForm.reset();
-    // this.name.reset();
-    // this.email.reset();
-    // this.message.reset();
   }
 
   public ngOnDestroy() {
