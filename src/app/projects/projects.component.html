@@ -7,14 +7,16 @@
       </div>
       <h3 class="title">{{project.name}}</h3>
       <app-button class="btn"
-                  (click)="currentProject = projects[projectIndex]"
-                  text="Learn more"
+                  color="pink"
+                  size="medium"
+                  (click)="openProject(projectIndex)"
+                  label="Learn more"
       ></app-button>
     </div>
   </div>
   <app-project-view
       [currentProject]="currentProject"
-      (projectEvent)="onProjectEvent($event)"
+      (closeProjectEvent)="onCloseProjectEvent($event)"
       *ngIf="currentProject !== null"
   ></app-project-view>
 </div>

@@ -1,3 +1,9 @@
+@import "../../../assets/styles/variables";
+
+:host {
+  overflow: hidden !important;
+}
+
 .project-view {
   left: 0;
   right: 0;

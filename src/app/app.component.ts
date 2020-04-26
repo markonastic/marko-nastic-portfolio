@@ -1,4 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +15,14 @@ export class AppComponent implements AfterViewInit {
   public contactOffset: number = null;
   public homeElementHeight: number = null;
 
+  constructor(private location: Location) {
+  }
+
   public ngAfterViewInit(): void {
     this.calcOffset();
   }
 
   public calcOffset(): void {
-    this.homeElementHeight = (document.querySelector('#home') as HTMLElement).getBoundingClientRect().height;
     this.homeOffset = (document.querySelector('#home') as HTMLElement).offsetTop;
     this.aboutOffset = (document.querySelector('#about') as HTMLElement).offsetTop;
     this.projectsOffset = (document.querySelector('#projects') as HTMLElement).offsetTop;
@@ -28,19 +31,34 @@ export class AppComponent implements AfterViewInit {
 
   public checkOffset(): void {
     const { pageYOffset } = window;
-    const amount: number = this.homeElementHeight / 3;
 
-    if (pageYOffset >= this.homeOffset - amount && pageYOffset < this.aboutOffset - amount) {
-      this.activeRoute = 0;
-    } else if (pageYOffset >= this.aboutOffset - amount && pageYOffset < this.projectsOffset - amount) {
-      this.activeRoute = 1;
-    } else if (pageYOffset >= this.projectsOffset - amount && pageYOffset < this.contactOffset - amount) {
-      this.activeRoute = 2;
-    } else if (pageYOffset >= this.contactOffset - amount) {
-      this.activeRoute = 3;
+    if (pageYOffset >= this.homeOffset && pageYOffset < this.aboutOffset) {
+      if (this.activeRoute !== 0) {
+        this.changeUrlFragment('#home');
+        this.activeRoute = 0;
+      }
+    } else if (pageYOffset >= this.aboutOffset && pageYOffset < this.projectsOffset) {
+      if (this.activeRoute !== 1) {
+        this.changeUrlFragment('#about');
+        this.activeRoute = 1;
+      }
+    } else if (pageYOffset >= this.projectsOffset && pageYOffset < this.contactOffset) {
+      if (this.activeRoute !== 2) {
+        this.changeUrlFragment('#projects');
+        this.activeRoute = 2;
+      }
+    } else if (pageYOffset >= this.contactOffset) {
+      if (this.activeRoute !== 3) {
+        this.changeUrlFragment('#contact');
+        this.activeRoute = 3;
+      }
     } else {
       this.activeRoute = -1;
     }
+  }
+
+  private changeUrlFragment(fragment: string): void {
+    this.location.replaceState(fragment);
   }
 
   public onResize(): void {

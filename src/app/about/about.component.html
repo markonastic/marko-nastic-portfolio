@@ -10,15 +10,14 @@
         I'm working on becoming a Frontend developer and I'm currently looking for a job.<br>
         I'm always ready to improve my knowledge and gain experience through new challenges and I think that being
         employed in this area would help me make daily progress. <br>
-        <!-- I am looking forward to this opportunity and I'm sure I will use it right.<br> -->
         For more information, do not hesitate to contact me.
       </span>
     </div>
     <div class="content-skills">
       <div class="skill" *ngFor="let skill of skills">
         <div class="name">{{ skill.name }}</div>
-        <div class="bar" [ngStyle]="{width: skill.per}">
-          <div class="per">{{ skill.per }}</div>
+        <div class="bar" [ngStyle]="{width: skill.percent}">
+          <div class="per">{{ skill.percent }}</div>
         </div>
       </div>
     </div>

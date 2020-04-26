@@ -1,29 +1,32 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
-import { EmailService, IFormspreeResponse } from '../services/email/email.service';
+import { Component, OnDestroy } from '@angular/core';
+import { FormGroup, Validators, AbstractControl, FormBuilder } from '@angular/forms';
+import { EmailService } from '../services/email/email.service';
+import { Subscription } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
+import { IFormspreeResponse } from '../interfaces/formspree';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent {
+export class ContactComponent implements OnDestroy {
 
-  public emailSuccess: boolean = false;
-
-  public contactForm: FormGroup = new FormGroup({
-    name: new FormControl('', [
+  public emailSuccess: boolean = null;
+  public emailSubscription: Subscription = null;
+  public contactForm: FormGroup = this.formBuilder.group({
+    name: ['', [
       Validators.required,
-      Validators.minLength(3),
-    ]),
-    email: new FormControl('', [
+      Validators.minLength(3)
+    ]],
+    email: ['', [
       Validators.required,
-      Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
-    ]),
-    message: new FormControl('', [
+      Validators.email
+    ]],
+    message: ['', [
       Validators.required,
-      Validators.minLength(50),
-    ]),
+      Validators.minLength(50)
+    ]]
   });
 
   public get name(): AbstractControl {
@@ -38,35 +41,41 @@ export class ContactComponent {
     return this.contactForm.get('message');
   }
 
-  constructor(private emailService: EmailService) {}
+  public get formControls() {
+    return this.contactForm.controls;
+  }
+
+  constructor(private emailService: EmailService, private formBuilder: FormBuilder) {}
 
   public sendEmail(): void {
+    this.emailSuccess = null;
     if (this.contactForm.valid) {
-      this.emailService.sendEmail(this.name.value, this.email.value, this.message.value)
-                       .subscribe((response: IFormspreeResponse) => this.checkResponse(response));
-    } else if (this.name.untouched || this.name.invalid) {
-        this.name.markAsTouched();
-    } else if (this.email.untouched || this.email.invalid) {
-      this.email.markAsTouched();
-    } else if (this.message.untouched) {
-      this.message.markAsTouched();
+      this.emailSubscription = this.emailService.sendEmail(this.name.value, this.email.value, this.message.value)
+                       .subscribe(
+                         (response: IFormspreeResponse) => this.checkResponse(response),
+                         (err: HttpErrorResponse) => this.emailSuccess = false
+                       );
+    } else {
+      this.contactForm.markAllAsTouched();
     }
   }
 
   public checkResponse(response: IFormspreeResponse): void {
-    this.emailSuccess = response.ok;
+    this.emailSuccess = (response as IFormspreeResponse).ok;
 
     if (this.emailSuccess) {
       setTimeout(() => {
-        this.emailSuccess = false;
-      }, 4000);
+        this.emailSuccess = null;
+      }, 3000);
       this.resetInputs();
     }
   }
 
   public resetInputs(): void {
-    this.name.reset();
-    this.email.reset();
-    this.message.reset();
+    this.contactForm.reset();
+  }
+
+  public ngOnDestroy() {
+    this.emailSubscription.unsubscribe();
   }
 }

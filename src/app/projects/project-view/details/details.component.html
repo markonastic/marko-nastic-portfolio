@@ -5,16 +5,18 @@
   </div>
   <p class="description">{{ currentProject.description }}</p>
   <div class="buttons">
-    <app-button class="btn"
+    <app-button *ngFor="let page of currentProject.pages"
                 (click)="openInNewTab(page.url)"
-                *ngFor="let page of currentProject.pages"
-                [text]="page.name"
-                fontAwesome="fas fa-external-link-alt"
+                [label]="page.name"
+                class="btn"
+                color="blue"
+                icon="fas fa-external-link-alt"
+                size="medium"
     ></app-button>
-    <app-button class="close"
-                (click)="closeProjectEvent.emit(true)"
-                fontAwesome="fas fa-times"
-                hasBorder="false"
+    <app-button (click)="closeProjectEvent.emit(true)"
+                class="close"
+                size="square"
+                icon="fas fa-times"
     ></app-button>
   </div>
 </div>

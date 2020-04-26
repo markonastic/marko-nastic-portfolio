@@ -1,8 +1,10 @@
+@import "../../assets/styles/variables";
+
 .contact {
   min-height: 100vh;
   padding: 5rem 0 3rem 0;
-  background: #252934;
-  color: white;
+  background: $main-blue;
+  color: $white;
   text-align: center;
   position: relative;
   display: flex;
@@ -17,7 +19,7 @@
   }
 
   h3 {
-    color: #05c2c9;
+    color: $light-blue;
     font-size: 1rem;
   }
 
@@ -38,7 +40,7 @@
         position: absolute;
         top: 1px;
         right: 2px;
-        color: #707071;
+        color: $light-grey;
         font-size: 0.7rem;
       }
     }
@@ -50,8 +52,8 @@
       z-index: 1;
       border: none;
       border-radius: 0.2rem;
-      background: #1e242c;
-      color: white;
+      background: $dark-grey;
+      color: $white;
       font: inherit;
       margin-bottom: 0.3rem;
 
@@ -60,24 +62,24 @@
       }
 
       &::placeholder {
-        color: #707071;
+        color: $light-grey;
       }
 
       &:focus {
         outline: 0;
-        border: 2px solid #04c2c9;
+        border: 2px solid $light-blue;
       }
 
       &:-webkit-autofill,
       &:-webkit-autofill:hover,
       &:-webkit-autofill:focus,
       &:-webkit-autofill:active {
-        -webkit-text-fill-color: white;
-        box-shadow: 0 0 0 30px #1e242c inset !important;
+        -webkit-text-fill-color: $white;
+        box-shadow: 0 0 0 30px $dark-grey inset !important;
       }
 
       &.input-danger {
-        border-color: #b22222;
+        border-color: $red;
       }
     }
 
@@ -98,24 +100,16 @@
       border-radius: 0.1rem;
 
       &.alert-danger {
-        background: #b22222;
+        background: $red;
       }
 
       &.alert-success {
-        background: #4caf50;
+        background: $green;
       }
     }
 
-    .btn::ng-deep {
+    .btn {
       align-self: flex-end;
-      .button {
-        &:hover {
-          background-color: #04c2c9;
-          border-color: #04c2c9;
-        }
-      }
     }
   }
 }
-
-

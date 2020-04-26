@@ -1,19 +1,18 @@
 <nav class="nav-container">
-  <div class="navbar" [ngClass]="{showMenu: showMenu}">
+  <input type="checkbox" name="menu-btn" id="menu-btn">
+
+  <label for="menu-btn">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </label>
+
+  <div class="navbar">
     <div class="nav" *ngFor="let nav of navs; let i = index"
-         (click)="scrollToElement(nav)"
+         (click)="scrollToAnchor(nav)"
          [ngClass]="{active: activeRoute === i}"
          >
          {{ nav }}
     </div>
-  </div>
-  <div class="menu-btn" #menuBtn (click)="openMenu(menuBtn)"
-                        (window:scroll)="onWindowEvent(menuBtn)"
-                        (window:resize)="onWindowEvent(menuBtn)"
-                        [ngClass]="{'close-btn': showMenu}"
-                        >
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
   </div>
 </nav>

@@ -8,9 +8,11 @@ import { Component, Input } from '@angular/core';
 
 export class ButtonComponent {
 
-  @Input() public text: string;
-  @Input() public fontAwesome: string;
-  @Input() public hasBorder: boolean = false;
+  @Input() public type: string = 'button';
+  @Input() public size: string = null;
+  @Input() public color: string = null;
+  @Input() public label: string = null;
+  @Input() public icon: string = null;
 
   constructor() { }
 }

@@ -17,6 +17,8 @@ import { FooterComponent } from './footer/footer.component';
 import { GalleryComponent } from './projects/project-view/gallery/gallery.component';
 import { DetailsComponent } from './projects/project-view/details/details.component';
 
+import { EmailService } from './services/email/email.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,9 @@ import { DetailsComponent } from './projects/project-view/details/details.compon
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    EmailService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

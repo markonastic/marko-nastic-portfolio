@@ -1,5 +1,5 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import { IProject } from '../../project';
+import { IProject } from '../../../interfaces/project';
 
 @Component({
   selector: 'app-details',

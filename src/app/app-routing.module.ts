@@ -14,9 +14,7 @@ const routes: Routes = [
 ];
 
 const extraOptions: ExtraOptions = {
-  anchorScrolling: 'enabled',
-  onSameUrlNavigation: 'reload',
-  scrollPositionRestoration: 'enabled'
+  anchorScrolling: 'enabled'
 };
 
 @NgModule({

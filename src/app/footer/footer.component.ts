@@ -1,7 +1,7 @@
-import { ContactService } from './../services/contact/contact.service';
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { IContact } from './contact';
+import { IContact } from '../interfaces/contact';
 
 @Component({
   selector: 'app-footer',
@@ -10,15 +10,35 @@ import { IContact } from './contact';
 })
 export class FooterComponent implements OnInit {
 
-  public contacts: IContact[] = null;
+  public contacts: IContact[] = [
+    {
+      name: 'linkedin',
+      url: 'https://www.linkedin.com/in/markonastic/',
+      icon: 'fab fa-linkedin'
+    },
+    {
+      name: 'skype',
+      url: 'skype:markonastic90?chat',
+      icon: 'fab fa-skype'
+    },
+    {
+      name: 'mail',
+      url: 'mailto:marko.nastic@hotmail.com',
+      icon: 'fas fa-at'
+    },
+    {
+      name: 'github',
+      url: 'https://github.com/markonastic',
+      icon: 'fab fa-github'
+    }
+  ];
 
-  constructor(private contactService: ContactService, private sanitizer: DomSanitizer) {}
+  constructor(private sanitizer: DomSanitizer,
+              private viewportScroller: ViewportScroller
+             ) {}
 
   public ngOnInit(): void {
-    this.contactService.getContacts().subscribe((contacts: IContact[]) => {
-      this.contacts = contacts;
-      this.sanitizeUrl();
-    });
+    this.sanitizeUrl();
   }
 
   // Sanitizing skype url because Angular compiler sees it as unsafe
@@ -29,7 +49,7 @@ export class FooterComponent implements OnInit {
     skypeContact.url = sanitizedUrl as string;
   }
 
-  public scrollToHome(): void {
-    document.querySelector('#home').scrollIntoView();
+  public scrollToAnchor(): void {
+    this.viewportScroller.scrollToAnchor('home');
   }
 }
