@@ -1,8 +1,8 @@
 @import "../../assets/styles/variables";
 
 .projects {
-  min-height: 100vh;
-  min-height: -webkit-fill-available; // IOS Safari
+  min-height: 100%;
+  // min-height: -webkit-fill-available; // IOS Safari
   display: flex;
   flex-direction: column;
   justify-content: center;
