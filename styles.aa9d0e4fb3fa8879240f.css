@@ -1,0 +1,1 @@
+*,::after,::before{box-sizing:border-box}*{font-family:Raleway,sans-serif}body,html{margin:0;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;min-height:100%}@media screen and (min-height:900px) and (min-width:1000px){html{font-size:25px}}@media screen and (max-height:900px) and (max-width:600px){html{font-size:14px}}
