@@ -31,7 +31,7 @@
         color: $pink;
       }
 
-      &:hover {
+      &:not(.active):hover {
         color: $dark-pink;
       }
     }
@@ -72,7 +72,6 @@
     }
   }
 
-
   label {
     width: 2rem;
     height: 1.4rem;
@@ -106,6 +105,10 @@
         margin-right: 0;
         padding: 1rem 0;
         text-align: center;
+
+        &:not(.active):hover {
+          color: unset;
+        }
       }
     }
 

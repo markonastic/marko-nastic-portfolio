@@ -21,8 +21,8 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
               private viewportScroller: ViewportScroller) { }
 
   public ngAfterViewInit() {
-    this.fragmentSubscription = this.route.fragment.pipe(take(1)).subscribe((fragment: string) => {
-      if (fragment === '') {
+    this.fragmentSubscription = this.route.fragment.pipe(take(2)).subscribe((fragment: string) => {
+      if (fragment === null) {
         this.router.navigate([''], { fragment: 'home' });
       }
     });
@@ -32,7 +32,7 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
     this.viewportScroller.scrollToAnchor(nav);
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.fragmentSubscription.unsubscribe();
   }
 }

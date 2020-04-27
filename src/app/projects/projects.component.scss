@@ -2,6 +2,7 @@
 
 .projects {
   min-height: 100vh;
+  min-height: -webkit-fill-available; // IOS Safari
   display: flex;
   flex-direction: column;
   justify-content: center;

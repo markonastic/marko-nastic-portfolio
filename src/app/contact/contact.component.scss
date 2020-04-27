@@ -2,6 +2,7 @@
 
 .contact {
   min-height: 100vh;
+  min-height: -webkit-fill-available; // IOS Safari
   padding: 5rem 0 3rem 0;
   background: $main-blue;
   color: $white;
