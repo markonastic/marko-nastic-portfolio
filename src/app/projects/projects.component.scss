@@ -2,7 +2,6 @@
 
 .projects {
   min-height: 100%;
-  // min-height: -webkit-fill-available; // IOS Safari
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +29,7 @@
         background-color: $transparent-grey;
 
         .card {
-          opacity: 0;
+          opacity: 0.3;
         }
 
         .title {
