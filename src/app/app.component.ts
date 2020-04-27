@@ -24,9 +24,9 @@ export class AppComponent implements AfterViewInit {
 
   public calcOffset(): void {
     this.homeOffset = (document.querySelector('#home') as HTMLElement).offsetTop;
-    this.aboutOffset = (document.querySelector('#about') as HTMLElement).offsetTop;
-    this.projectsOffset = (document.querySelector('#projects') as HTMLElement).offsetTop;
-    this.contactOffset = (document.querySelector('#contact') as HTMLElement).offsetTop;
+    this.aboutOffset = (document.querySelector('#about') as HTMLElement).offsetTop - 50;
+    this.projectsOffset = (document.querySelector('#projects') as HTMLElement).offsetTop - 50;
+    this.contactOffset = (document.querySelector('#contact') as HTMLElement).offsetTop - 50;
   }
 
   public checkOffset(): void {
@@ -61,7 +61,7 @@ export class AppComponent implements AfterViewInit {
     this.location.replaceState(fragment);
   }
 
-  public onWindowEvent(): void {
+  public onResize(): void {
     this.calcOffset();
     this.checkOffset();
   }
