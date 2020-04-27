@@ -1,4 +1,4 @@
-<app-navbar [activeRoute]="activeRoute" (window:resize)="onResize()" (window:scroll)="checkOffset()"></app-navbar>
+<app-navbar [activeRoute]="activeRoute" (window:resize)="onWindowEvent()" (window:scroll)="onWindowEvent()"></app-navbar>
 <app-home id="home"></app-home>
 <app-about id="about"></app-about>
 <app-projects id="projects"></app-projects>

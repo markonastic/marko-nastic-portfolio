@@ -61,7 +61,7 @@ export class AppComponent implements AfterViewInit {
     this.location.replaceState(fragment);
   }
 
-  public onResize(): void {
+  public onWindowEvent(): void {
     this.calcOffset();
     this.checkOffset();
   }
