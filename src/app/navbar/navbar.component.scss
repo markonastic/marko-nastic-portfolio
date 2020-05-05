@@ -41,19 +41,13 @@
   #menu-btn {
     display: none;
 
-    &:not(:checked) + label {
-      animation: rotateMenuBtnReverse 0.3s;
-    }
-
     &:checked {
-
       & ~ div.navbar {
         height: 14rem;
       }
 
       & + label {
-        transform: rotate(45deg);
-        animation: rotateMenuBtn 0.3s;
+        transform: rotate(-405deg);
 
         .line {
           &:nth-child(1) {
@@ -78,6 +72,7 @@
     justify-content: space-between;
     flex-direction: column;
     cursor: pointer;
+    transition: transform 0.3s;
 
     .line {
       height: 3px;
@@ -115,23 +110,5 @@
     label {
       display: flex;
     }
-  }
-}
-
-@keyframes rotateMenuBtn {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(1.125turn);
-  }
-}
-
-@keyframes rotateMenuBtnReverse {
-  from {
-    transform: rotate(1.125turn);
-  }
-  to {
-    transform: rotate(0deg);
   }
 }

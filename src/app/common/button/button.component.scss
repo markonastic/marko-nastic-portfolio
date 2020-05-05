@@ -16,13 +16,13 @@
               border-color ease-in-out 0.3s,
               color ease-in-out 0.3s;
 
-  &-medium {
+  &.medium {
     height: 3rem;
     width: 9rem;
     font-size: 1rem;
   }
 
-  &-big {
+  &.big {
     height: 4rem;
     width: 12rem;
     font-size: 1.2rem;
