@@ -1,7 +1,0 @@
-<div class="project-view" (transitionend)="projectViewTransitionEnd()">
-  <div class="mask" (click)="closeProject()"></div>
-  <div class="main-container">
-    <app-gallery class="gallery" [images]="currentProject.images"></app-gallery>
-    <app-details class="details" [currentProject]="currentProject" (closeProjectEvent)="closeProject()"></app-details>
-  </div>
-</div>

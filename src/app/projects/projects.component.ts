@@ -45,11 +45,11 @@ export class ProjectsComponent {
 
   constructor() { }
 
-  public onCloseProjectEvent(event: any): void {
-    this.currentProject = event;
+  public closeProjectModal(): void {
+    this.currentProject = null;
   }
 
-  public openProject(i: number): void {
-    this.currentProject = this.projects[i];
+  public openProject(project: IProject): void {
+    this.currentProject = project;
   }
 }

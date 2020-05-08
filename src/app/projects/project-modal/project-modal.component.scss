@@ -1,0 +1,25 @@
+@import "../../../assets/styles/variables";
+
+.mask {
+  background: $transparent-black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 19;
+}
+
+.main-container {
+  display: grid;
+  height: 100%;
+  max-width: 50rem;
+  grid-template-rows: min-content 1fr;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 20;
+  margin: auto;
+}

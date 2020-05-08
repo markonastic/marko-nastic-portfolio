@@ -1,7 +1,7 @@
 <div class="projects">
   <h1>Projects</h1>
   <div class="gallery">
-    <div class="project" *ngFor="let project of projects; let projectIndex = index">
+    <div class="project" *ngFor="let project of projects">
       <div class="card">
         <img src="{{project.images[0]}}" alt="">
       </div>
@@ -9,14 +9,10 @@
       <app-button class="btn"
                   color="pink"
                   size="medium"
-                  (click)="openProject(projectIndex)"
+                  (click)="openProject(project)"
                   label="Learn more"
       ></app-button>
     </div>
   </div>
-  <app-project-view
-      [currentProject]="currentProject"
-      (closeProjectEvent)="onCloseProjectEvent($event)"
-      *ngIf="currentProject !== null"
-  ></app-project-view>
+  <app-project-modal [currentProject]="currentProject" (closeProjectModalEvent)="closeProjectModal()"></app-project-modal>
 </div>

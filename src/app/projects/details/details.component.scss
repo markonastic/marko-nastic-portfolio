@@ -1,4 +1,4 @@
-@import "../../../../assets/styles/variables";
+@import "../../../assets/styles/variables";
 
 .details-container {
   display: flex;
@@ -15,12 +15,12 @@
       font-size: 2rem;
     }
     .made {
-      opacity: 0.6;
+      color: $transparent-black;
     }
   }
 
   .description {
-    border-top: 1px solid $transparent-grey;
+    border-top: 1px solid $transparent-black;
     padding: 1.5rem 0;
   }
 
@@ -28,6 +28,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     .btn {
       margin-right: 1rem;
@@ -39,6 +40,8 @@
 
       &::ng-deep .button {
         color: $light-grey;
+        height: min-content;
+        width: min-content;
       }
     }
   }
@@ -47,11 +50,14 @@
 @media screen and (max-height: 900px) and (max-width: 500px) {
   .details-container {
     padding: 1rem;
+
     .buttons {
       justify-content: flex-start;
+
       .btn {
         margin-right: 0.5rem;
       }
+
       .close {
         right: -0.7rem;
       }

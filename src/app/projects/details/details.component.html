@@ -3,7 +3,9 @@
     <span class="title">{{ currentProject.name}}</span><br>
     <span class="made">{{ currentProject.madeWith }}</span>
   </div>
+
   <p class="description">{{ currentProject.description }}</p>
+
   <div class="buttons">
     <app-button *ngFor="let page of currentProject.pages"
                 (click)="openInNewTab(page.url)"
@@ -13,7 +15,7 @@
                 icon="fas fa-external-link-alt"
                 size="medium"
     ></app-button>
-    <app-button (click)="closeProjectEvent.emit(true)"
+    <app-button (click)="closeProjectModal()"
                 class="close"
                 size="square"
                 icon="fas fa-times"

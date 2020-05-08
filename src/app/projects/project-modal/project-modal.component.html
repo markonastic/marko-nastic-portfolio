@@ -1,0 +1,5 @@
+<div class="mask" @openCloseMask *ngIf="currentProject" (click)="closeProjectModal()"></div>
+<div class="main-container" @openClose *ngIf="currentProject">
+  <app-gallery [images]="currentProject.images"></app-gallery>
+  <app-details [currentProject]="currentProject" (closeProjectModalEvent)="closeProjectModal()"></app-details>
+</div>

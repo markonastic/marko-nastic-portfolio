@@ -1,5 +1,5 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import { IProject } from '../../../interfaces/project';
+import { IProject } from '../../interfaces/project';
 
 @Component({
   selector: 'app-details',
@@ -9,7 +9,7 @@ import { IProject } from '../../../interfaces/project';
 export class DetailsComponent {
 
   @Input() public currentProject: IProject = null;
-  @Output() public closeProjectEvent = new EventEmitter<any>();
+  @Output() public closeProjectModalEvent: EventEmitter<void> = new EventEmitter();
 
   constructor() { }
 
@@ -17,4 +17,7 @@ export class DetailsComponent {
     window.open(url);
   }
 
+  public closeProjectModal(): void {
+    this.closeProjectModalEvent.emit();
+  }
 }
