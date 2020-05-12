@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/styles/variables";
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -13,6 +14,23 @@ html, body {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch; // IOS Safari
   min-height: 100%;
+}
+
+.h1 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 0.2rem;
+      background-color: $main-blue;
+      bottom: -0.2rem;
+    }
 }
 
 

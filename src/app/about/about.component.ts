@@ -9,16 +9,15 @@ import { ISkill } from './../interfaces/skill';
 export class AboutComponent {
 
   public skills: ISkill[] = [
-    { name: 'HTML', percent: '90%' },
-    { name: 'CSS', percent: '80%' },
-    { name: 'SASS', percent: '70%' },
-    { name: 'Bootstrap', percent: '80%' },
-    { name: 'JavaScript', percent: '60%' },
-    { name: 'Angular', percent: '50%' },
-    { name: 'Git', percent: '70%' },
-    { name: '.NET', percent: '40%' },
-    { name: 'SQL', percent: '50%' }
+    { name: 'HTML', percent: '70%' },
+    { name: 'CSS', percent: '70%' },
+    { name: 'SASS', percent: '60%' },
+    { name: 'Bootstrap', percent: '60%' },
+    { name: 'JavaScript', percent: '50%' },
+    { name: 'Angular', percent: '40%' },
+    { name: '.NET', percent: '30%' },
+    { name: 'Git', percent: '60%' },
   ];
 
-  constructor() { }
+  constructor() {}
 }

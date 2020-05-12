@@ -9,11 +9,6 @@
   color: $main-blue;
   padding: 3rem 0;
 
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-  }
-
   .content {
     display: flex;
     max-width: 65rem;
@@ -48,12 +43,68 @@
       .text {
         text-align: center;
         margin-top: 0.6rem;
+
+        .contact {
+          text-decoration: none;
+          color: $light-blue;
+
+          &:hover {
+            font-weight: bold;
+          }
+        }
       }
     }
 
     .content-skills {
       width: 100%;
       padding: 0.6rem;
+
+      .skills {
+        width: fit-content;
+        margin: 0 auto 2rem auto;
+        font-size: 2rem;
+
+        &::before {
+          bottom: -0.15rem;
+          height: 0.15rem;
+        }
+
+        i {
+          position: absolute;
+          font-size: 1rem;
+          right: -1rem;
+
+          .tooltip {
+            visibility: hidden;
+            background-color: $main-blue;
+            color: $white;
+            border-radius: 0.3rem;
+            padding: 0.3rem;
+            position: absolute;
+            left: 1.4rem;
+            bottom: -0.15rem;
+            white-space: nowrap;
+            font-size: 0.8rem;
+            letter-spacing: 0.05rem;
+            user-select: none;
+
+            // arrow
+            &::after {
+              content: "";
+              position: absolute;
+              top: 0.3rem;
+              left: -0.6rem;
+              border-width: 0.35rem;
+              border-style: solid;
+              border-color: transparent $main-blue transparent transparent;
+            }
+          }
+
+          &:hover .tooltip {
+              visibility: visible;
+          }
+        }
+      }
 
       .skill {
         display: grid;
@@ -84,7 +135,7 @@
 
           .per {
             position: absolute;
-            right: 1rem;
+            right: 0.5rem;
             color: $light-grey;
           }
         }

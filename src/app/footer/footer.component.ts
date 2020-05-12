@@ -1,4 +1,3 @@
-import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { IContact } from '../interfaces/contact';
@@ -33,23 +32,17 @@ export class FooterComponent implements OnInit {
     }
   ];
 
-  constructor(private sanitizer: DomSanitizer,
-              private viewportScroller: ViewportScroller
-             ) {}
+  constructor(private sanitizer: DomSanitizer) {}
 
   public ngOnInit(): void {
     this.sanitizeUrl();
   }
 
-  // Sanitizing skype url because Angular compiler sees it as unsafe
+  // Sanitizing skype url because it's unsafe
   public sanitizeUrl(): void {
     const skypeContact: IContact = this.contacts.find((contact: IContact) => contact.name === 'skype');
     const sanitizedUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(skypeContact.url);
 
     skypeContact.url = sanitizedUrl as string;
-  }
-
-  public scrollToAnchor(): void {
-    this.viewportScroller.scrollToAnchor('home');
   }
 }

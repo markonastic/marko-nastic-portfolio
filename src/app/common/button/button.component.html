@@ -10,4 +10,5 @@
         {{ label }}
         <span *ngIf="label && icon">&nbsp;</span>
         <i [class]="icon" *ngIf="icon"></i>
+        <ng-content></ng-content>
 </button>
