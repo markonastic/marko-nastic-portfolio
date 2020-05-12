@@ -14,6 +14,7 @@
     .title {
       font-size: 2rem;
     }
+
     .made {
       color: $transparent-black;
     }
@@ -32,6 +33,13 @@
 
     .btn {
       margin-right: 1rem;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
     }
 
     .close {

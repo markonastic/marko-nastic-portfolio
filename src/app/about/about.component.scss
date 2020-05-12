@@ -100,8 +100,10 @@
             }
           }
 
-          &:hover .tooltip {
-              visibility: visible;
+          &:hover, &:active {
+            .tooltip {
+                visibility: visible;
+            }
           }
         }
       }
@@ -159,5 +161,9 @@
 @media screen and (max-height: 900px) and (max-width: 600px) {
   .about .content .content-skills {
     padding: 0.6rem 0;
+
+    i:hover .tooltip {
+      visibility: hidden;
+    }
   }
 }

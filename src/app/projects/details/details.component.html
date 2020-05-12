@@ -8,13 +8,14 @@
 
   <div class="buttons">
     <app-button *ngFor="let page of currentProject.pages"
-                (click)="openInNewTab(page.url)"
                 [label]="page.name"
                 class="btn"
                 color="blue"
                 icon="fas fa-external-link-alt"
                 size="medium"
-    ></app-button>
+    >
+      <a [href]="page.url" target="_blank" rel="noopener noreferrer"></a>
+    </app-button>
     <app-button (click)="closeProjectModal()"
                 class="close"
                 size="square"

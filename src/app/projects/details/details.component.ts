@@ -13,10 +13,6 @@ export class DetailsComponent {
 
   constructor() { }
 
-  public openInNewTab(url: string): void {
-    window.open(url);
-  }
-
   public closeProjectModal(): void {
     this.closeProjectModalEvent.emit();
   }
