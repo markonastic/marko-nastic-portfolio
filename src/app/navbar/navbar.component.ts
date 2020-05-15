@@ -1,4 +1,3 @@
-import { ViewportScroller } from '@angular/common';
 import { Component, Input, AfterViewInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs/operators';
@@ -17,8 +16,7 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
   public navs: string[] = ['home', 'about', 'projects', 'contact'];
 
   constructor(private router: Router,
-              private route: ActivatedRoute,
-              private viewportScroller: ViewportScroller) { }
+              private route: ActivatedRoute) { }
 
   public ngAfterViewInit() {
     this.fragmentSubscription = this.route.fragment.pipe(take(2)).subscribe((fragment: string) => {
@@ -26,10 +24,6 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
         this.router.navigate([''], { fragment: 'home' });
       }
     });
-  }
-
-  public scrollToAnchor(nav: string): void {
-    this.viewportScroller.scrollToAnchor(nav);
   }
 
   public ngOnDestroy(): void {
