@@ -75,7 +75,7 @@
     flex-direction: column;
     cursor: pointer;
     transition: transform 0.3s;
-    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 
     .line {
       height: 3px;
