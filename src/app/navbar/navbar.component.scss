@@ -29,7 +29,6 @@
       color: inherit;
       text-decoration: none;
       display: block;
-      pointer-events: none;
 
       &.active {
         color: $pink;
@@ -47,10 +46,6 @@
     &:checked {
       & ~ div.navbar {
         height: 14rem;
-
-        .nav {
-          pointer-events: auto;
-        }
       }
 
       & + label {
@@ -112,11 +107,27 @@
         &:not(.active):hover {
           color: unset;
         }
+
+        &:not(.active):active {
+          color: $dark-pink;
+        }
       }
     }
 
     label {
       display: flex;
+    }
+
+    #menu-btn {
+
+      &:not(:checked) {
+        & ~ div.navbar {
+          .nav {
+            pointer-events: none;
+          }
+        }
+      }
+
     }
   }
 }

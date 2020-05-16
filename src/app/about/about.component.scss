@@ -47,9 +47,10 @@
         .contact {
           text-decoration: none;
           color: $light-blue;
+          font-weight: 600;
 
           &:hover {
-            font-weight: bold;
+            color: $blue;
           }
         }
       }
@@ -85,6 +86,7 @@
             bottom: -0.15rem;
             white-space: nowrap;
             font-size: 0.8rem;
+            font-weight: 700;
             letter-spacing: 0.05rem;
             user-select: none;
 

@@ -58,7 +58,11 @@
 @media screen and (max-height: 900px) and (max-width: 500px) {
   .details-container {
     padding: 1rem;
+  }
+}
 
+@media screen and (max-width: 350px) {
+  .details-container {
     .buttons {
       justify-content: flex-start;
 

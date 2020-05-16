@@ -21,7 +21,8 @@ html, body {
     margin-bottom: 3rem;
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: center ;
+    font-weight: 600;
 
     &::before {
       content: '';
@@ -32,7 +33,6 @@ html, body {
       bottom: -0.2rem;
     }
 }
-
 
 @media screen and (min-height: 900px) and (min-width: 1000px) {
   html {

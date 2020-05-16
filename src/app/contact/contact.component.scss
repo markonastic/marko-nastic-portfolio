@@ -1,7 +1,6 @@
 @import "../../assets/styles/variables";
 
 .contact {
-  min-height: 100vh;
   padding: 5rem 0 3rem 0;
   background: $main-blue;
   color: $white;
@@ -19,8 +18,6 @@
   }
 
   h1 {
-    margin: auto 0;
-
     &::before {
       background-color: $white;
     }
